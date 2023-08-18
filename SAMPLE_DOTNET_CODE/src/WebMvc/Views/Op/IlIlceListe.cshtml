@@ -1,0 +1,30 @@
+﻿@using WebMvc.Models.IlIlceListe;
+@model IlIlceListeViewModel
+@{
+    ViewData["Title"] = "IlIlceListe";
+    ViewData["Menu"] = "8/8";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İlçe Liste (Il_Ilce_Liste)</h3>
+</div>
+<form asp-controller="/Op" asp-action="IlIlceListe" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Islem_Tip"></label>
+                <input class="form-control" asp-for="Islem_Tip" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Il_Kodu"></label>
+                <input class="form-control" asp-for="Il_Kodu" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Uygulama_Tip"></label>
+                <input class="form-control" asp-for="Uygulama_Tip" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

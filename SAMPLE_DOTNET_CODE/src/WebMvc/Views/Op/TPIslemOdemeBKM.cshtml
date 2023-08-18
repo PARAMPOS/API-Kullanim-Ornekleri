@@ -1,0 +1,102 @@
+﻿@using WebMvc.Models.TPIslemOdemeBKM;
+@model TPIslemOdemeBKMViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeBKM";
+    ViewData["Menu"] = "3/2";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>BKM Express İle Ödeme (TP_Islem_Odeme_BKM)</h3>
+</div>
+<form asp-controller="/Op" asp-action="TPIslemOdemeBKM" method="post">
+    <div class="d-flex p-2">
+        <section class="input-section col-10 ps-5 pe-5">
+            <div class="pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-4">Client</span>
+                <div class="form-row d-flex justify-content-between pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" hash-input="CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="GUID"></label>
+                <input class="form-control" asp-for="GUID" hash-input="GUID" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Customer_Info"></label>
+                <input class="form-control" asp-for="Customer_Info" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Customer_GSM"></label>
+                <input class="form-control" asp-for="Customer_GSM" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Error_URL"></label>
+                <input class="form-control" asp-for="Error_URL" hash-input="Error_URL" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Success_URL"></label>
+                <input class="form-control" asp-for="Success_URL" hash-input="Success_URL" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Order_ID"></label>
+                <input class="form-control" asp-for="Order_ID" hash-input="Order_ID" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Order_Description"></label>
+                <input class="form-control" asp-for="Order_Description" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Amount"></label>
+                <input class="form-control" asp-for="Amount" hash-input="Amount" />
+            </div>
+            <div>
+                <div class="mt-2">
+                    @await Component.InvokeAsync("AlertInfo", new { message = "Hash için gerekli alanlar (CLIENT_CODE + GUID + Amount + Order_ID + Error_URL + Success_URL)" })
+                </div>
+                <label class="form-label" asp-for="Payment_Hash"></label>
+                <div class="row g-3 align-items-center">
+                    <div class="col-6">
+                        <input class="form-control" asp-for="Payment_Hash" hash-result />
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-outline-success mb-1" onclick="generateHash()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-node-plus-fill" viewBox="0 0 16 16">
+                                <path d="M11 13a5 5 0 1 0-4.975-5.5H4A1.5 1.5 0 0 0 2.5 6h-1A1.5 1.5 0 0 0 0 7.5v1A1.5 1.5 0 0 0 1.5 10h1A1.5 1.5 0 0 0 4 8.5h2.025A5 5 0 0 0 11 13zm.5-7.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 1 0z" />
+                            </svg>
+                            Hash Oluştur
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Transaction_ID"></label>
+                <input class="form-control" asp-for="Transaction_ID" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="IPAddress"></label>
+                <input class="form-control" asp-for="IPAddress" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Referrer_URL"></label>
+                <input class="form-control" asp-for="Referrer_URL" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />
+@section Scripts{
+    <script src="~/js/hash.js"></script>
+    <script src="~/js/tpislemodemebkm.js"></script>
+}

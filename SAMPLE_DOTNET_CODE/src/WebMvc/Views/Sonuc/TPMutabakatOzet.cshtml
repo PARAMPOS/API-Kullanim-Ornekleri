@@ -1,0 +1,76 @@
+﻿@using WebMvc.Models.TPMutabakatOzet;
+@model TPMutabakatOzetSonucViewModel
+@{
+    ViewData["Title"] = "TPMutabakatOzet";
+    ViewData["Menu"] = "6/1";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İşlem Özetleri (TP_Mutabakat_Ozet)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.DT_Bilgi != null)
+            {
+                <tr>
+                    <th scope="row" rowspan="6">DT_Bilgi</th>
+                    <th scope="row">Basarili_Islem_Sayi</th>
+                    <td>@Model.DT_Bilgi.Basarili_Islem_Sayi</td>
+                </tr>
+                <tr>
+                    <th scope="row">Basarili_Islem_Toplam_Tutar</th>
+                    <td>@Model.DT_Bilgi.Basarili_Islem_Toplam_Tutar</td>
+                </tr>
+                <tr>
+                    <th scope="row">Iptal_Islem_Sayi</th>
+                    <td>@Model.DT_Bilgi.Iptal_Islem_Sayi</td>
+                </tr>
+                <tr>
+                    <th scope="row">Iptal_Islem_Toplam_Tutar</th>
+                    <td>@Model.DT_Bilgi.Iptal_Islem_Toplam_Tutar</td>
+                </tr>
+                <tr>
+                    <th scope="row">Iade_Islem_Sayi</th>
+                    <td>@Model.DT_Bilgi.Iade_Islem_Sayi</td>
+                </tr>
+                <tr>
+                    <th scope="row">Iade_Islem_Toplam_Tutar</th>
+                    <td>@Model.DT_Bilgi.Iade_Islem_Toplam_Tutar</td>
+                </tr>
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

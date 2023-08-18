@@ -1,0 +1,66 @@
+﻿@using WebMvc.DTOs.Il_Ilce_Liste;
+@using WebMvc.Models.IlIlceListe;
+@model IlIlceListeSonucViewModel
+@{
+    ViewData["Title"] = "IlIlceListe";
+    ViewData["Menu"] = "8/8";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İlçe Liste (Il_Ilce_Liste)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (Il_Ilce_ListeDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="2">DT_Bilgi</th>
+                            <th scope="row">Ilce_Kodu</th>
+                            <td>@dt_bilgi.Ilce_Kodu</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ilce</th>
+                            <td>@dt_bilgi.Ilce</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

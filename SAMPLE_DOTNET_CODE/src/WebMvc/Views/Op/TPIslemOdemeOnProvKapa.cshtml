@@ -1,0 +1,57 @@
+@using WebMvc.Models.TPIslemOdemeOnProvKapa;
+@model TPIslemOdemeOnProvKapaViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeOnProvKapa";
+    ViewData["Menu"] = "2/2";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Ön Provizyon - Kapama (TP_Islem_Odeme_OnProv_Kapa)</h3>
+</div>
+<div class="pe-5 ps-5">
+    @await Component.InvokeAsync("AlertWarning", new { message = "Ön Provizyon kapama ve iptal işlemleri eğer on provizyon NS ile açıldıysa kapama ve iptal yapılabilmektedir." })
+</div>
+<div class="pe-5 ps-5 pt-2">
+    @await Component.InvokeAsync("AlertWarning", new { message = "Eğer 3D ile açıldıysa Ön Provizyon onaylandıktan sonra üstünde işlem yapılabilir." })
+</div>
+<form asp-controller="/Op" asp-action="TPIslemOdemeOnProvKapa" method="post">
+    <div class="d-flex p-2">
+        <section class="input-section col-12 ps-5 pe-5">
+            <div class="pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-4">Client</span>
+                <div class="form-row d-flex justify-content-between pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="GUID"></label>
+                <input class="form-control" asp-for="GUID" hash-input="GUID" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Prov_ID"></label>
+                <input class="form-control" asp-for="Prov_ID" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Prov_Tutar"></label>
+                <input class="form-control" asp-for="Prov_Tutar" />
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Siparis_ID"></label>
+                <input class="form-control" asp-for="Siparis_ID"/>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

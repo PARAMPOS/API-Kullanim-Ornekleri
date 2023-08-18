@@ -1,0 +1,124 @@
+﻿@using WebMvc.Models.TPKKVerify;
+@model TPKKVerifySonucViewModel
+@{
+    ViewData["Title"] = "TPKKVerify";
+    ViewData["Menu"] = "4/8";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Kart Doğrulama (TP_KK_Verify)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Islem_ID</th>
+                <td>@Model.Sonuc.Islem_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">UCD_URL</th>
+                <td>@Model.Sonuc.UCD_URL</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">Banka_Sonuc_Kod</th>
+                <td>@Model.Sonuc.Banka_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">Siparis_ID</th>
+                <td>@Model.Sonuc.Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Komisyon_Oran</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if (Model.SonucPost is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.SonucPost.KK_VERIFY_Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">KK_VERIFY_Sonuc</th>
+                <td>@Model.SonucPost.KK_VERIFY_Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Sonuc_Str</th>
+                <td>@Model.SonucPost.KK_VERIFY_Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Data1</th>
+                <td>@Model.SonucPost.KK_VERIFY_Data1</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Data2</th>
+                <td>@Model.SonucPost.KK_VERIFY_Data2</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Data3</th>
+                <td>@Model.SonucPost.KK_VERIFY_Data3</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Data4</th>
+                <td>@Model.SonucPost.KK_VERIFY_Data4</td>
+            </tr>
+            <tr>
+                <th scope="row">KK_VERIFY_Data5</th>
+                <td>@Model.SonucPost.KK_VERIFY_Data5</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

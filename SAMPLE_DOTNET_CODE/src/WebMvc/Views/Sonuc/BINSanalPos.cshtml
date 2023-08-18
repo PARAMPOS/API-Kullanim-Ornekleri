@@ -1,0 +1,95 @@
+﻿@using WebMvc.DTOs.BIN_SanalPos;
+@using WebMvc.Models.BINSanalPos;
+@model BINSanalPosSonucViewModel
+@{
+    ViewData["Title"] = "BINSanalPos";
+    ViewData["Menu"] = "5/4";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>BIN Kodları (BIN_SanalPos)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (BIN_SanalPosDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="9">DT_Bilgi</th>
+                            <th scope="row">BIN</th>
+                            <td>@dt_bilgi.BIN</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SanalPOS_ID</th>
+                            <td>@dt_bilgi.SanalPOS_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KartBanka</th>
+                            <td>@dt_bilgi.Kart_Banka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">DKK</th>
+                            <td>@dt_bilgi.DKK</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kart_Tip</th>
+                            <td>@dt_bilgi.Kart_Tip</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kart_Org</th>
+                            <td>@dt_bilgi.Kart_Org</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Banka_Kodu</th>
+                            <td>@dt_bilgi.Banka_Kodu</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kart_Ticari</th>
+                            <td>@dt_bilgi.Kart_Ticari</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kart_Marka</th>
+                            <td>@dt_bilgi.Kart_Marka</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

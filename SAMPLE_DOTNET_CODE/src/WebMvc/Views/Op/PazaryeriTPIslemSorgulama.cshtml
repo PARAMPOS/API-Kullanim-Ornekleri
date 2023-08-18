@@ -1,0 +1,59 @@
+﻿@using WebMvc.Models.PazaryeriTPIslemSorgulama;
+@model PazaryeriTPIslemSorgulamaViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPIslemSorgulama";
+    ViewData["Menu"] = "8/6";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Pazaryeri İşlem Sorgulama (Pazaryeri_TP_Islem_Sorgulama)</h3>
+</div>
+<form asp-controller="/Op" asp-action="PazaryeriTPIslemSorgulama" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="me-5 pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-3">Client</span>
+                <div class="form-row d-flex gap-5 pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="ETS_GUID"></label>
+                <input class="form-control" asp-for="ETS_GUID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID_AltUyeIsyeri"></label>
+                <input class="form-control" asp-for="GUID_AltUyeIsyeri" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID_AltUyeIsyeri"></label>
+                <input class="form-control" asp-for="GUID_AltUyeIsyeri" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="SanalPOS_Islem_ID"></label>
+                <input class="form-control" asp-for="SanalPOS_Islem_ID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Tarih_Bas"></label>
+                <input class="form-control" asp-for="Tarih_Bas" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Tarih_Bit"></label>
+                <input class="form-control" asp-for="Tarih_Bit" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

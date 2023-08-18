@@ -1,0 +1,228 @@
+﻿@using WebMvc.Models.TPIslemOdemeOnProvWMD;
+@model TPIslemOdemeOnProvWMDSonucViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeOnProvWMD";
+    ViewData["Menu"] = "2/1";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Ön Provizyon - 3D Model (TP_Islem_Odeme_OnProv_WMD)</h3>
+</div>
+@if (Model.SonucNonSecure is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.SonucNonSecure.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Islem_ID</th>
+                <td>@Model.SonucNonSecure.Islem_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Islem_GUID</th>
+                <td>@Model.SonucNonSecure.Islem_GUID</td>
+            </tr>
+            <tr>
+                <th scope="row">UCD_HTML</th>
+                <td>@Model.SonucNonSecure.UCD_HTML</td>
+            </tr>
+            <tr>
+                <th scope="row">UCD_MD</th>
+                <td>@Model.SonucNonSecure.UCD_MD</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.SonucNonSecure.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.SonucNonSecure.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_Trans_ID</th>
+                <td>@Model.SonucNonSecure.Bank_Trans_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_AuthCode</th>
+                <td>@Model.SonucNonSecure.Bank_AuthCode</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_HostMsg</th>
+                <td>@Model.SonucNonSecure.Bank_HostMsg</td>
+            </tr>
+            <tr>
+                <th scope="row">Banka_Sonuc_Kod</th>
+                <td>@Model.SonucNonSecure.Banka_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_Extra</th>
+                <td>@Model.SonucNonSecure.Bank_Extra</td>
+            </tr>
+            <tr>
+                <th scope="row">Siparis_ID</th>
+                <td>@Model.SonucNonSecure.Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_HostRefNum</th>
+                <td>@Model.SonucNonSecure.Bank_HostRefNum</td>
+            </tr>
+            <tr>
+                <th scope="row">Ext_Data</th>
+                <td>@Model.SonucNonSecure.Ext_Data</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if (Model.Sonuc3DSecure is not null && Model.Completed3DSecure is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc3DSecure!.mdStatus == "1" && Model.Completed3DSecure.Sonuc == 1)
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+            <div>
+                @{
+                    if (Model.Onaylandı == 1)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            Model otomatik olarak onaylanmıştır.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Model onaylama başarısız.
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">IslemID</th>
+                <td>@Model.IslemID</td>
+            </tr>
+            <tr>
+                <th scope="row">md</th>
+                <td>@Model.Sonuc3DSecure.md</td>
+            </tr>
+            <tr>
+                <th scope="row">mdStatus</th>
+                <td>@Model.Sonuc3DSecure.mdStatus</td>
+            </tr>
+            <tr>
+                <th scope="row">orderId</th>
+                <td>@Model.Sonuc3DSecure.orderId</td>
+            </tr>
+            <tr>
+                <th scope="row">transactionAmount</th>
+                <td>@Model.Sonuc3DSecure.transactionAmount</td>
+            </tr>
+            <tr>
+                <th scope="row">islemGUID</th>
+                <td>@Model.Sonuc3DSecure.islemGUID</td>
+            </tr>
+            <tr>
+                <th scope="row">islemHash</th>
+                <td>@Model.Sonuc3DSecure.islemHash</td>
+            </tr>
+            <tr>
+                <th scope="row">bankResult</th>
+                <td>@Model.Sonuc3DSecure.bankResult</td>
+            </tr>
+            <tr>
+                <th scope="row">dc</th>
+                <td>@Model.Sonuc3DSecure.dc</td>
+            </tr>
+            <tr>
+                <th scope="row">dcURL</th>
+                <td>@Model.Sonuc3DSecure.dcUrl</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Completed3DSecure.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Ack</th>
+                <td>@Model.Completed3DSecure.Sonuc_Ack</td>
+            </tr>
+            <tr>
+                <th scope="row">Dekont_ID</th>
+                <td>@Model.Completed3DSecure.Dekont_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Siparis_ID</th>
+                <td>@Model.Completed3DSecure.Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">UCD_MD</th>
+                <td>@Model.Completed3DSecure.UCD_MD</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_Trans_ID</th>
+                <td>@Model.Completed3DSecure.Bank_Trans_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_AuthCode</th>
+                <td>@Model.Completed3DSecure.Bank_AuthCode</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_HostMsg</th>
+                <td>@Model.Completed3DSecure.Bank_HostMsg</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_Extra</th>
+                <td>@Model.Completed3DSecure.Bank_Extra</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_Sonuc_Kod</th>
+                <td>@Model.Completed3DSecure.Bank_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">Bank_HostRefNum</th>
+                <td>@Model.Completed3DSecure.Bank_HostRefNum</td>
+            </tr>
+            <tr>
+                <th scope="row">Komisyon_Oran</th>
+                <td>@Model.Completed3DSecure.Komisyon_Oran</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

@@ -1,0 +1,100 @@
+﻿@using WebMvc.Models.TPOzelOranSKGuncelle;
+@model TPOzelOranSKGuncelleViewModel
+@{
+    ViewData["Title"] = "TPOzelOranSKGuncelle";
+    ViewData["Menu"] = "5/3";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Özelleştirilmiş Pos Oranları (TP_Ozel_Oran_SK_Guncelle)</h3>
+</div>
+<form asp-controller="/Op" asp-action="TPOzelOranSKGuncelle" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="me-5 pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-3">Client</span>
+                <div class="form-row d-flex gap-5 pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID"></label>
+                <input class="form-control" asp-for="GUID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Ozel_Oran_SK_ID"></label>
+                <input class="form-control" asp-for="Ozel_Oran_SK_ID" />
+            </div>
+            <button class="btn btn-secondary text-center w-100 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#data-collapse" aria-expanded="false" aria-controls="data-collapse">
+                MO
+            </button>
+            <div id="data-collapse" class="collapse mb-4">
+                <div class="card card-body">
+                    <div class="form-row d-flex flex-wrap gap-5 pb-2">
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_1"></label>
+                            <input class="form-control" asp-for="MO_1" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_2"></label>
+                            <input class="form-control" asp-for="MO_2" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_3"></label>
+                            <input class="form-control" asp-for="MO_3" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_4"></label>
+                            <input class="form-control" asp-for="MO_4" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_5"></label>
+                            <input class="form-control" asp-for="MO_5" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_6"></label>
+                            <input class="form-control" asp-for="MO_6" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_7"></label>
+                            <input class="form-control" asp-for="MO_7" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_8"></label>
+                            <input class="form-control" asp-for="MO_8" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_9"></label>
+                            <input class="form-control" asp-for="MO_9" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_10"></label>
+                            <input class="form-control" asp-for="MO_10" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_11"></label>
+                            <input class="form-control" asp-for="MO_11" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="MO_12"></label>
+                            <input class="form-control" asp-for="MO_12" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

@@ -1,0 +1,83 @@
+﻿@using WebMvc.Models.TPIslemOdemeOnProvKapa;
+@model TPIslemOdemeOnProvKapaSonucViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeOnProvKapa";
+    ViewData["Menu"] = "2/2";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Ön Provizyon - Kapama (TP_Islem_Odeme_OnProv_Kapa)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc!.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">Prov_ID</th>
+                <td>@Model.Sonuc.Prov_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">DekontID</th>
+                <td>@Model.Sonuc.Dekont_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">BankaSonucKod</th>
+                <td>@Model.Sonuc.Banka_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">SiparisID</th>
+                <td>@Model.Sonuc.Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">BankTransID</th>
+                <td>@Model.Sonuc.Bank_Trans_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">BankAuthCode</th>
+                <td>@Model.Sonuc.Bank_AuthCode</td>
+            </tr>
+            <tr>
+                <th scope="row">BankHostMsg</th>
+                <td>@Model.Sonuc.Bank_HostMsg</td>
+            </tr>
+            <tr>
+                <th scope="row">BankExtra</th>
+                <td>@Model.Sonuc.Bank_Extra</td>
+            </tr>
+            <tr>
+                <th scope="row">BankHostRefNum</th>
+                <td>@Model.Sonuc.Bank_HostRefNum</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

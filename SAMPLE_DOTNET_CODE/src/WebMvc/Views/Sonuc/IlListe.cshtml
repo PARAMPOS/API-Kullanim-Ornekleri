@@ -1,0 +1,66 @@
+﻿@using WebMvc.DTOs.Il_Liste;
+@using WebMvc.Models.IlListe;
+@model IlListeSonucViewModel
+@{
+    ViewData["Title"] = "IlListe";
+    ViewData["Menu"] = "8/9";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İl Liste (Il_Liste)</h3>
+</div>
+@if (Model.Sonuc is not 0)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == 1)
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+            @{
+                if (Model.DT != null)
+                {
+                    foreach (Il_ListeDTDTO dt_bilgi in @Model.DT)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="2">DT_Bilgi</th>
+                            <th scope="row">Plaka</th>
+                            <td>@dt_bilgi.Plaka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">IL</th>
+                            <td>@dt_bilgi.IL</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+}
+<br />

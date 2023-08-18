@@ -1,0 +1,138 @@
+﻿@using WebMvc.DTOs.Pazaryeri_TP_AltUyeIsyeri_Liste;
+@using WebMvc.Models.PazaryeriTPAltUyeIsyeriListe;
+@model PazaryeriTPAltUyeIsyeriListeSonucViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPAltUyeIsyeriListe";
+    ViewData["Menu"] = "8/3";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Alt Üye İş Yeri Listesi (Pazaryeri_TP_AltUyeIsyeri_Liste)</h3>
+</div>
+@if (Model.Sonuc is not 0)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == 1)
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" colspan="2">Toplam_Kayit</th>
+                <td>@Model.Toplam_Kayit</td>
+            </tr>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (Pazaryeri_TP_AltUyeIsyeri_ListeDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="18">DT_Bilgi</th>
+                            <th scope="row">ID</th>
+                            <td>@dt_bilgi.ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ETS_GUID</th>
+                            <td>@dt_bilgi.ETS_GUID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Durum</th>
+                            <td>@dt_bilgi.Durum</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tip</th>
+                            <td>@dt_bilgi.Tip</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ad_Soyad</th>
+                            <td>@dt_bilgi.Ad_Soyad</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Unvan</th>
+                            <td>@dt_bilgi.Unvan</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">TC_VN</th>
+                            <td>@dt_bilgi.TC_VN</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Yetkili_Kisi_TC</th>
+                            <td>@dt_bilgi.Yetkili_Kisi_TC</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GSM_No</th>
+                            <td>@dt_bilgi.GSM_No</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">IBAN_No</th>
+                            <td>@dt_bilgi.IBAN_No</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Adres</th>
+                            <td>@dt_bilgi.Adres</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Il</th>
+                            <td>@dt_bilgi.Il</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ilce</th>
+                            <td>@dt_bilgi.Ilce</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Website</th>
+                            <td>@dt_bilgi.Website</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MCC_Kod</th>
+                            <td>@dt_bilgi.MCC_Kod</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GUID</th>
+                            <td>@dt_bilgi.GUID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih</th>
+                            <td>@dt_bilgi.Tarih</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vergi_Daire</th>
+                            <td>@dt_bilgi.Vergi_Daire</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">GUID_AltUyeIsyeri</th>
+                <td>@Model.GUID_AltUyeIsyeri</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

@@ -1,0 +1,91 @@
+﻿@using WebMvc.Models.PazaryeriTPAltUyeIsyeriGuncelleme;
+@model PazaryeriTPAltUyeIsyeriGuncellemeViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPAltUyeIsyeriGuncelleme";
+    ViewData["Menu"] = "8/2";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Alt Üye İş Yeri Güncelleme (Pazaryeri_TP_AltUyeIsyeri_Guncelleme)</h3>
+</div>
+<form asp-controller="/Op" asp-action="PazaryeriTPAltUyeIsyeriGuncelleme" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="me-5 pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-3">Client</span>
+                <div class="form-row d-flex gap-5 pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID_AltUyeIsyeri"></label>
+                <input class="form-control" asp-for="GUID_AltUyeIsyeri" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Ad_Soyad"></label>
+                <input class="form-control" asp-for="Ad_Soyad" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Unvan"></label>
+                <input class="form-control" asp-for="Unvan" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GSM_No"></label>
+                <input class="form-control" asp-for="GSM_No" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="IBAN_No"></label>
+                <input class="form-control" asp-for="IBAN_No" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="IBAN_Unvan"></label>
+                <input class="form-control" asp-for="IBAN_Unvan" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Adres"></label>
+                <input class="form-control" asp-for="Adres" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Il"></label>
+                <input class="form-control" asp-for="Il" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Ilce"></label>
+                <input class="form-control" asp-for="Ilce" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="EPosta"></label>
+                <input class="form-control" asp-for="EPosta" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Website"></label>
+                <input class="form-control" asp-for="Website" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="MCC_Kod"></label>
+                <input class="form-control" asp-for="MCC_Kod" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Vergi_Daire"></label>
+                <input class="form-control" asp-for="Vergi_Daire" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Bagli_Olunan_Hesap"></label>
+                <input class="form-control" asp-for="Bagli_Olunan_Hesap" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

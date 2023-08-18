@@ -1,0 +1,124 @@
+﻿@using WebMvc.Models.KSTahsilat;
+@model KSTahsilatViewModel
+@{
+    ViewData["Title"] = "KSTahsilat";
+    ViewData["Menu"] = "4/3";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Kart Saklamalı Ödeme (KS_Tahsilat)</h3>
+</div>
+<form asp-controller="/Op" asp-action="KSTahsilat" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="me-5 pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-3">Client</span>
+                <div class="form-row d-flex gap-5 pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID"></label>
+                <input class="form-control" asp-for="GUID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_Islem_ID"></label>
+                <input class="form-control" asp-for="KK_Islem_ID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="CVV"></label>
+                <input class="form-control" asp-for="CVV" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_Sahibi_GSM"></label>
+                <input class="form-control" asp-for="KK_Sahibi_GSM" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Hata_URL"></label>
+                <input class="form-control" asp-for="Hata_URL" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Basarili_URL"></label>
+                <input class="form-control" asp-for="Basarili_URL" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Siparis_ID"></label>
+                <input class="form-control" asp-for="Siparis_ID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Siparis_Aciklama"></label>
+                <input class="form-control" asp-for="Siparis_Aciklama" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Taksit"></label>
+                <input class="form-control" asp-for="Taksit" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Islem_Tutar"></label>
+                <input class="form-control" asp-for="Islem_Tutar" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Toplam_Tutar"></label>
+                <input class="form-control" asp-for="Toplam_Tutar" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Islem_Guvenlik_Tip"></label>
+                <input class="form-control" asp-for="Islem_Guvenlik_Tip" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Islem_ID"></label>
+                <input class="form-control" asp-for="Islem_ID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="IPAdr"></label>
+                <input class="form-control" asp-for="IPAdr" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Ref_URL"></label>
+                <input class="form-control" asp-for="Ref_URL" />
+            </div>
+            <button class="btn btn-secondary text-center w-100 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#data-collapse" aria-expanded="false" aria-controls="data-collapse">
+                Data
+            </button>
+            <div id="data-collapse" class="collapse mb-4">
+                <div class="card card-body">
+                    <div class="form-row d-flex flex-wrap gap-5 pb-2">
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data1"></label>
+                            <input class="form-control" asp-for="Data1" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data2"></label>
+                            <input class="form-control" asp-for="Data2" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data3"></label>
+                            <input class="form-control" asp-for="Data3" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data4"></label>
+                            <input class="form-control" asp-for="Data4" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_Islem_ID"></label>
+                <input class="form-control" asp-for="KK_Islem_ID" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

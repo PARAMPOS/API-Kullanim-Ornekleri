@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">TurkPos TEST Tool</a>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex" style="width: 100%; height: 95%;">
+        <nav role="navigation" class="" style="border-width: 0 1px 0 0; border-color: grey; border-style: solid; width: 350px">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Satış
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PosOdeme" style="text-decoration: none; color: #aeb5bd;">Satış - 3D Pay / NS</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPWMDUCD" style="text-decoration: none; color: #aeb5bd;">Satış - 3D Model / NS</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Ön Provizyon
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemOdemeOnProvWMD" style="text-decoration: none; color: #aeb5bd;">Ön Provizyon - 3D Model / NS</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemOdemeOnProvKapa" style="text-decoration: none; color: #aeb5bd;">Ön Provizyon - Kapama</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemIptalOnProv" style="text-decoration: none; color: #aeb5bd;">Ön Provizyon - Iptal</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Ödeme
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemOdemeWD" style="text-decoration: none; color: #aeb5bd;">Döviz ile Ödeme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemOdemeBKM" style="text-decoration: none; color: #aeb5bd;">BKM Express ile Ödeme</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Kart İşlemleri
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2 user-select-none">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KKSaklama" style="text-decoration: none; color: #aeb5bd;">Kart Saklama</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KSKartEkle" style="text-decoration: none; color: #aeb5bd;">Kart Ekleme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KSTahsilat" style="text-decoration: none; color: #aeb5bd;">Kart Saklamalı Ödeme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KKSakliListe" style="text-decoration: none; color: #aeb5bd;">Kart Saklama Listesi</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KSKartListe" style="text-decoration: none; color: #aeb5bd;">Kart Listesi</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemOdemeOnProvWKS" style="text-decoration: none; color: #aeb5bd;">Saklı kart ile Ön Provizyon</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="KSKartSil" style="text-decoration: none; color: #aeb5bd;">Saklı Kart Silme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPKKVerify" style="text-decoration: none; color: #aeb5bd;">Kart Doğrulama</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        POS İşlemleri
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPOzelOranListe" style="text-decoration: none; color: #aeb5bd;">Firma Pos Oranları</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPOzelOranSKListe" style="text-decoration: none; color: #aeb5bd;">Kullanıcı Pos Oranları</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPOzelOranSKGuncelle" style="text-decoration: none; color: #aeb5bd;">Özelleştirilmiş Pos Oranları</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="BINSanalPos" style="text-decoration: none; color: #aeb5bd;">BIN Kodları</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        İşlemler
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush px-2">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPMutabakatOzet" style="text-decoration: none; color: #aeb5bd;">İşlem Özetleri</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemIptalIadeKismi2" style="text-decoration: none; color: #aeb5bd;">İşlem İptal ve İadeleri</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemSorgulama4" style="text-decoration: none; color: #aeb5bd;">İşlem Sorgulama</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemIzleme" style="text-decoration: none; color: #aeb5bd;">İşlem İzleme Metodu</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Mutabakat / Dekont
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPMutabakatDetay" style="text-decoration: none; color: #aeb5bd;">Mutabakat Detay</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="TPIslemDekontGonder" style="text-decoration: none; color: #aeb5bd;">Dekont</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item parent-item p-0">
+                    <p class="list-header mb-0 py-2 px-3 user-select-none">
+                        Pazaryeri
+                        <span class="toggle-icon">&#x25B6;</span>
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPAltUyeIsyeriEkleme" style="text-decoration: none; color: #aeb5bd;">Alt Üye İş Yeri Ekleme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPAltUyeIsyeriGuncelleme" style="text-decoration: none; color: #aeb5bd;">Alt Üye İş Yeri Güncelleme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPAltUyeIsyeriListe" style="text-decoration: none; color: #aeb5bd;">Alt Üye İş Yeri Listesi</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPSiparisOnay" style="text-decoration: none; color: #aeb5bd;">Sipariş Onay</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPSiparisDetayEkle" style="text-decoration: none; color: #aeb5bd;">Sipariş Detay Ekleme</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPIslemSorgulama" style="text-decoration: none; color: #aeb5bd;">Pazaryeri İşlem Sorgulama</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPIptalIade" style="text-decoration: none; color: #aeb5bd;">İptal İade</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="IlIlceListe" style="text-decoration: none; color: #aeb5bd;">İlçe Liste</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="IlListe" style="text-decoration: none; color: #aeb5bd;">İl Liste</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPLimitKontrol" style="text-decoration: none; color: #aeb5bd;">Pazaryeri TP Limit Kontrol</a>
+                        </li>
+                        <li class="list-group-item list-group-btm">
+                            <a asp-controller="/Op" asp-action="PazaryeriTPAltUyeIsyeriSilme" style="text-decoration: none; color: #aeb5bd;">Alt Uye Isyeri Silme</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <main role="main" style="width: 100%; overflow: auto;">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        const menuNo = @ViewData["Menu"]?.ToString()?.Split('/')[0];
+        const subMenuNo = @ViewData["Menu"]?.ToString()?.Split('/')[1];
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

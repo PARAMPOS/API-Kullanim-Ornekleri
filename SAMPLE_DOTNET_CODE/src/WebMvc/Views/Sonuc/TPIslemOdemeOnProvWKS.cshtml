@@ -1,0 +1,144 @@
+﻿@using WebMvc.Models.TPIslemOdemeOnProvWKS;
+@model TPIslemOdemeOnProvWKSSonucViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeOnProvWKS";
+    ViewData["Menu"] = "4/6";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Saklı kart ile Ön Provizyon (TP_Islem_Odeme_OnProv_WKS)</h3>
+</div>
+@if (Model.SonucNonSecure is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.SonucNonSecure.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.SonucNonSecure.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.SonucNonSecure.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">Islem_ID</th>
+                <td>@Model.SonucNonSecure.Islem_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">UCD_URL</th>
+                <td>@Model.SonucNonSecure.UCD_URL</td>
+            </tr>
+            <tr>
+                <th scope="row">Islem_GUID</th>
+                <td>@Model.SonucNonSecure.Islem_GUID</td>
+            </tr>
+            <tr>
+                <th scope="row">Banka_Sonuc_Kod</th>
+                <td>@Model.SonucNonSecure.Banka_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">Siparis_ID</th>
+                <td>@Model.SonucNonSecure.Siparis_ID</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if (Model.Sonuc3DSecure is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc3DSecure.TURKPOS_RETVAL_Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Sonuc</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Sonuc_Str</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_GUID</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_GUID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Islem_Tarih</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Islem_Tarih</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Dekont_ID</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Dekont_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Tahsilat_Tutari</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Tahsilat_Tutari</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Odeme_Tutari</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Odeme_Tutari</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Siparis_ID</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Islem_ID</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Islem_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Ext_Data</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Ext_Data</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Banka_Sonuc_Kod</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Banka_Sonuc_Kod</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Hash</th>
+                <td>@Model.Sonuc3DSecure.TURKPOS_RETVAL_Hash</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

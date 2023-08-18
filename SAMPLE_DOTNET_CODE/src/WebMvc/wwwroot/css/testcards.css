@@ -1,0 +1,13 @@
+﻿.testcards-container {
+    max-height: calc(78vh + 2.5rem);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.testcard {
+    background-color: #06060614;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0 0.5rem;
+}

@@ -1,0 +1,154 @@
+﻿@using WebMvc.DTOs.TP_Islem_Izleme;
+@using WebMvc.Models.TPIslemIzleme;
+@model TPIslemIzlemeSonucViewModel
+@{
+    ViewData["Title"] = "TPIslemIzleme";
+    ViewData["Menu"] = "6/4";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İşlem İzleme Metodu (TP_Islem_Izleme)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (TP_Islem_IzlemeDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="24">DT_Bilgi</th>
+                            <th scope="row">SanalPOS_Islem_ID</th>
+                            <td>dt_bilgi.SanalPOS_Islem_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SanalPOS_Islem_ID_Orj</th>
+                            <td>dt_bilgi.SanalPOS_Islem_ID_Orj</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sonuc_Str</th>
+                            <td>dt_bilgi.Sonuc_Str</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tip_Str</th>
+                            <td>dt_bilgi.Tip_Str</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih</th>
+                            <td>dt_bilgi.Tarih</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Odeme_Yapan_Bilgisi</th>
+                            <td>dt_bilgi.Odeme_Yapan_Bilgisi</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Odeme_Yapan_AdSoyad</th>
+                            <td>dt_bilgi.Odeme_Yapan_AdSoyad</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Odeme_Yapan_GSM</th>
+                            <td>dt_bilgi.Odeme_Yapan_GSM</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Odeme_Yapan_TC</th>
+                            <td>dt_bilgi.Odeme_Yapan_TC</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Odeme_Aciklama</th>
+                            <td>dt_bilgi.Odeme_Aciklama</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Taksit</th>
+                            <td>dt_bilgi.Taksit</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SanalPOS_Banka</th>
+                            <td>dt_bilgi.SanalPOS_Banka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Komisyon_Oran</th>
+                            <td>dt_bilgi.Komisyon_Oran</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Komisyon_Tutar</th>
+                            <td>dt_bilgi.Komisyon_Tutar</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Net_Tutar</th>
+                            <td>dt_bilgi.Net_Tutar</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tutar</th>
+                            <td>dt_bilgi.Tutar</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Islem_Guvenlik</th>
+                            <td>dt_bilgi.Islem_Guvenlik</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Dekont_ID</th>
+                            <td>dt_bilgi.Dekont_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ORJ_ORDER_ID</th>
+                            <td>dt_bilgi.ORJ_ORDER_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sonuc</th>
+                            <td>dt_bilgi.Sonuc</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kaynak</th>
+                            <td>dt_bilgi.Kaynak</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Toplam_Iade_Tutar</th>
+                            <td>dt_bilgi.Toplam_Iade_Tutar</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ORJ_Tarih</th>
+                            <td>dt_bilgi.ORJ_Tarih</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PB</th>
+                            <td>dt_bilgi.PB</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

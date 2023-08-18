@@ -1,0 +1,44 @@
+﻿@using WebMvc.Models.KSKartSil;
+@model KSKartSilSonucViewModel
+@{
+    ViewData["Title"] = "KSKartSil";
+    ViewData["Menu"] = "4/7";
+}
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc == 1)
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

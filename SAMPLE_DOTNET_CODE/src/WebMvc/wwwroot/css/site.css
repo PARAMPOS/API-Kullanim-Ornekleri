@@ -1,0 +1,63 @@
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    */
+}
+
+body > div.container-fluid {
+    height: inherit;
+}
+
+.form-label{
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+}
+
+.parent-item {
+}
+
+li:hover {
+    cursor: pointer;
+    /*filter: brightness(90%)*/
+}
+
+li:active {
+    /*filter: brightness(80%)*/
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    color: white;
+}
+
+.list-group-item .toggle-icon {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.list-group-item.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.list-group-btm {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.active-subitem {
+    background-color: #273341;
+    color: white;
+}
+

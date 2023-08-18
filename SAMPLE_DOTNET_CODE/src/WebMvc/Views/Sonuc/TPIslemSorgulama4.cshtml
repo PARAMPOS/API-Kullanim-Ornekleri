@@ -1,0 +1,132 @@
+﻿@using WebMvc.Models.TPIslemSorgulama4;
+@model TPIslemSorgulama4SonucViewModel
+@{
+    ViewData["Title"] = "TPIslemSorgulama4";
+    ViewData["Menu"] = "6/3";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İşlem Sorgulama (TP_Islem_Sorgulama4)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Sonuc.DT_Bilgi != null)
+            {
+                <tr>
+                    <th scope="row" rowspan="20">DT_Bilgi</th>
+                    <th scope="row">Odeme_Sonuc</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Odeme_Sonuc</td>
+                </tr>
+                <tr>
+                    <th scope="row">Odeme_Sonuc_Aciklama</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Odeme_Sonuc_Aciklama</td>
+                </tr>
+                <tr>
+                    <th scope="row">Dekont_ID</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Dekont_ID</td>
+                </tr>
+                <tr>
+                    <th scope="row">Siparis_ID</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Siparis_ID</td>
+                </tr>
+                <tr>
+                    <th scope="row">Islem_ID</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Islem_ID</td>
+                </tr>
+                <tr>
+                    <th scope="row">Durum</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Durum</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tarih</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Tarih</td>
+                </tr>
+                <tr>
+                    <th scope="row">Toplam_Tutar</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Toplam_Tutar</td>
+                </tr>
+                <tr>
+                    <th scope="row">Komisyon_Oran</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Komisyon_Oran</td>
+                </tr>
+                <tr>
+                    <th scope="row">Komisyon_Tutar</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Komisyon_Tutar</td>
+                </tr>
+                <tr>
+                    <th scope="row">Banka_Sonuc_Aciklama</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Banka_Sonuc_Aciklama</td>
+                </tr>
+                <tr>
+                    <th scope="row">Taksit</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Taksit</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ext_Data</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Ext_Data</td>
+                </tr>
+                <tr>
+                    <th scope="row">Toplam_Iade_Tutar</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Toplam_Iade_Tutar</td>
+                </tr>
+                <tr>
+                    <th scope="row">KK_No</th>
+                    <td>@Model.Sonuc.DT_Bilgi.KK_No</td>
+                </tr>
+                <tr>
+                    <th scope="row">Bank_Extra</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Bank_Extra</td>
+                </tr>
+                <tr>
+                    <th scope="row">Islem_Tip</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Islem_Tip</td>
+                </tr>
+                <tr>
+                    <th scope="row">Bank_Trans_ID</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Bank_Trans_ID</td>
+                </tr>
+                <tr>
+                    <th scope="row">Bank_AuthCode</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Bank_AuthCode</td>
+                </tr>
+                <tr>
+                    <th scope="row">Bank_HostRefNum</th>
+                    <td>@Model.Sonuc.DT_Bilgi.Bank_HostRefNum</td>
+                </tr>
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

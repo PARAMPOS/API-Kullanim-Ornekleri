@@ -1,0 +1,106 @@
+﻿@using WebMvc.DTOs.KK_Sakli_Liste;
+@using WebMvc.Models.KKSakliListe;
+@model KKSakliListeSonucViewModel
+@{
+    ViewData["Title"] = "KKSakliListe";
+    ViewData["Menu"] = "4/4";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Kart Saklama Listesi (KK_Sakli_Liste)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (KK_Sakli_ListeDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="12">DT_Bilgi</th>
+                            <th scope="row">ID</th>
+                            <td>@dt_bilgi.ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_GUID</th>
+                            <td>@dt_bilgi.KK_GUID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih</th>
+                            <td>@dt_bilgi.Tarih</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_No</th>
+                            <td>@dt_bilgi.KK_No</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_Tip</th>
+                            <td>@dt_bilgi.KK_Tip</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_Banka</th>
+                            <td>@dt_bilgi.KK_Banka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_Marka</th>
+                            <td>@dt_bilgi.KK_Marka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kart_Adi</th>
+                            <td>@dt_bilgi.Kart_Adi</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_Hash</th>
+                            <td>@dt_bilgi.KK_Hash</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_KD</th>
+                            <td>@dt_bilgi.KK_KD</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">KK_SK</th>
+                            <td>@dt_bilgi.KK_SK</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data2</th>
+                            <td>@dt_bilgi.Data2</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

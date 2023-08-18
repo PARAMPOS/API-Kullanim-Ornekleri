@@ -1,0 +1,30 @@
+﻿@using WebMvc.Models.PazaryeriTPLimitKontrol;
+@model PazaryeriTPLimitKontrolViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPLimitKontrol";
+    ViewData["Menu"] = "8/10";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Pazaryeri TP Limit Kontrol (Pazaryeri_TP_Limit_Kontrol)</h3>
+</div>
+<form asp-controller="/Op" asp-action="PazaryeriTPLimitKontrol" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="col-md-9">
+                <label class="form-label" asp-for="ETS_GUID"></label>
+                <input class="form-control" asp-for="ETS_GUID" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="GUID_AltUyeIsyeri"></label>
+                <input class="form-control" asp-for="GUID_AltUyeIsyeri" />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Tutar_Odenecek"></label>
+                <input class="form-control" asp-for="Tutar_Odenecek" />
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />

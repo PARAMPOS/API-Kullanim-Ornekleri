@@ -1,0 +1,51 @@
+﻿@using WebMvc.Models.PazaryeriTPAltUyeIsyeriEkleme;
+@model PazaryeriTPAltUyeIsyeriEklemeSonucViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPAltUyeIsyeriEkleme";
+    ViewData["Menu"] = "8/1";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Alt Üye İş Yeri Ekleme (Pazaryeri_TP_AltUyeIsyeri_Ekleme)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc is not null && Model.Sonuc.Sonuc.ToString() == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">GUID_AltUyeIsyeri</th>
+                <td>@Model.Sonuc.GUID_AltUyeIsyeri</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "SHA2B64";
+}
+@Html.AntiForgeryToken()
+<h1 class="text-center">SHA2B64</h1>
+<div class="d-flex gap-3 flex-wrap justify-content-center mt-5">
+    <div class="form-group">
+        <label for="ClientCode" class="form-label">CLIENT_CODE</label>
+        <input id="ClientCode" class="form-control" placeholder="CLIENT_CODE" />
+    </div>
+    <div class="form-group">
+        <label for="GUID" class="form-label">GUID</label>
+        <input id="GUID" class="form-control" placeholder="GUID" />
+    </div>
+    <div class="form-group">
+        <label for="Taksit" class="form-label">Taksit</label>
+        <input id="Taksit" class="form-control" placeholder="Taksit" />
+    </div>
+    <div class="form-group">
+        <label for="IslemTutar" class="form-label">Islem_Tutar</label>
+        <input id="IslemTutar" class="form-control" placeholder="Islem_Tutar" />
+    </div>
+    <div class="form-group">
+        <label for="ToplamTutar" class="form-label">Toplam_Tutar</label>
+        <input id="ToplamTutar" class="form-control" placeholder="Toplam_Tutar" />
+    </div>
+    <div class="form-group">
+        <label for="SiparisId" class="form-label">Siparis_ID</label>
+        <input id="SiparisId" class="form-control" placeholder="Siparis_ID" />
+    </div>
+    <div class="form-group">
+        <label for="HataURL" class="form-label">Hata_URL</label>
+        <input id="HataURL" class="form-control" placeholder="Hata_URL" />
+    </div>
+    <div class="form-group">
+        <label for="BasariliURL" class="form-label">Basarili_URL</label>
+        <input id="BasariliURL" class="form-control" placeholder="Basarili_URL" />
+    </div>
+</div>
+<label id="result" class="mt-3" style="width: 100%; text-align: center; font-size: x-large; cursor: text;"></label>
+<button type="button" class="btn btn-primary w-100 mt-2" onclick="generateHash()">Oluştur</button>
+@section Scripts {
+    <script src="~/js/hash.js"></script>
+}

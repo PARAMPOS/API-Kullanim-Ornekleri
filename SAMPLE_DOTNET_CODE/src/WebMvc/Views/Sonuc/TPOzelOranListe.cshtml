@@ -1,0 +1,134 @@
+﻿@using WebMvc.DTOs.TP_Ozel_Oran_Liste;
+@using WebMvc.Models.TPOzelOranListe;
+@model TPOzelOranListeSonucViewModel
+@{
+    ViewData["Title"] = "TPOzelOranListe";
+    ViewData["Menu"] = "5/1";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Firma Pos Oranları (TP_Ozel_Oran_Liste)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (TP_Ozel_Oran_ListeDT_BilgiDTO dt_bilgi in Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="19">DT_Bilgi</th>
+                            <th scope="row">Ozel_Oran_ID</th>
+                            <td>@dt_bilgi.Ozel_Oran_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GUID</th>
+                            <td>@dt_bilgi.GUID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih_Bas</th>
+                            <td>@dt_bilgi.Tarih_Bas</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih_Bit</th>
+                            <td>@dt_bilgi.Tarih_Bit</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SanalPOS_ID</th>
+                            <td>@dt_bilgi.SanalPOS_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kredi_Karti_Banka</th>
+                            <td>@dt_bilgi.Kredi_Karti_Banka</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kredi_Karti_Banka_Gorsel</th>
+                            <td>@dt_bilgi.Kredi_Karti_Banka_Gorsel</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_01</th>
+                            <td>@dt_bilgi.MO_01</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_02</th>
+                            <td>@dt_bilgi.MO_02</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_03</th>
+                            <td>@dt_bilgi.MO_03</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_04</th>
+                            <td>@dt_bilgi.MO_04</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_05</th>
+                            <td>@dt_bilgi.MO_05</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_06</th>
+                            <td>@dt_bilgi.MO_06</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_07</th>
+                            <td>@dt_bilgi.MO_07</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_08</th>
+                            <td>@dt_bilgi.MO_08</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_09</th>
+                            <td>@dt_bilgi.MO_09</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_10</th>
+                            <td>@dt_bilgi.MO_10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_11</th>
+                            <td>@dt_bilgi.MO_11</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MO_12</th>
+                            <td>@dt_bilgi.MO_12</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

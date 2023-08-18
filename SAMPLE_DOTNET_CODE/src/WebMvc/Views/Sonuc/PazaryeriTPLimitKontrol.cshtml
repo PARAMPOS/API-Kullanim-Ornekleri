@@ -1,0 +1,67 @@
+﻿@using WebMvc.Models.PazaryeriTPLimitKontrol;
+@model PazaryeriTPLimitKontrolSonucViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPLimitKontrol";
+    ViewData["Menu"] = "8/10";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Pazaryeri TP Limit Kontrol (Pazaryeri_TP_Limit_Kontrol)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc is not null && Model.Sonuc.Sonuc.ToString() == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">AltUyeIsyeri</th>
+                <td>@Model.Sonuc.AltUyeIsyeri</td>
+            </tr>
+            <tr>
+                <th scope="row">Odeme_Alma_Durumu</th>
+                <td>@Model.Sonuc.Odeme_Alma_Durumu</td>
+            </tr>
+            <tr>
+                <th scope="row">Toplam_Tahsilat_Tutari</th>
+                <td>@Model.Sonuc.Toplam_Tahsilat_Tutari</td>
+            </tr>
+            <tr>
+                <th scope="row">Pazaryeri_Limit</th>
+                <td>@Model.Sonuc.Pazaryeri_Limit</td>
+            </tr>
+            <tr>
+                <th scope="row">Yeni_Odenecek_Tutar</th>
+                <td>@Model.Sonuc.Yeni_Odenecek_Tutar</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

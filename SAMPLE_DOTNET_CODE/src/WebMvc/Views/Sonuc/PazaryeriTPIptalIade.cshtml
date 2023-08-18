@@ -1,0 +1,55 @@
+﻿@using WebMvc.Models.PazaryeriTPIptalIade;
+@model PazaryeriTPIptalIadeSonucViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPIptalIade";
+    ViewData["Menu"] = "8/7";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>İptal İade (Pazaryeri_TP_Iptal_Iade)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Durum</th>
+                <td>@Model.Sonuc.Durum</td>
+            </tr>
+            <tr>
+                <th scope="row">Durum_Str</th>
+                <td>@Model.Sonuc.Durum_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc</th>
+                <td>@Model.Sonuc.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">Sonuc_Str</th>
+                <td>@Model.Sonuc.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

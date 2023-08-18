@@ -1,0 +1,120 @@
+﻿@using WebMvc.Models.TPIslemOdemeBKM;
+@model TPIslemOdemeBKMSonucViewModel
+@{
+    ViewData["Title"] = "TPIslemOdemeBKM";
+    ViewData["Menu"] = "3/2";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>BKM Express İle Ödeme (TP_Islem_Odeme_BKM)</h3>
+</div>
+@if (Model.Sonuc is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc.Response_Code == 1)
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Redirect_URL</th>
+                <td>@Model.Sonuc.Redirect_URL</td>
+            </tr>
+            <tr>
+                <th scope="row">Response_Code</th>
+                <td>@Model.Sonuc.Response_Code</td>
+            </tr>
+            <tr>
+                <th scope="row">Response_Message</th>
+                <td>@Model.Sonuc.Response_Message</td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if (Model.SonucPOST is not null)
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.SonucPOST.TURKPOS_RETVAL_Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Sonuc</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Sonuc_Str</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Sonuc_Str</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_GUID</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_GUID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Islem_Tarih</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Islem_Tarih</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Dekont_ID</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Dekont_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Tahsilat_Tutari</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Tahsilat_Tutari</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Odeme_Tutari</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Odeme_Tutari</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Siparis_ID</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Siparis_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Islem_ID</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Islem_ID</td>
+            </tr>
+            <tr>
+                <th scope="row">TURKPOS_RETVAL_Banka_Sonuc_Kod</th>
+                <td>@Model.SonucPOST.TURKPOS_RETVAL_Banka_Sonuc_Kod</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

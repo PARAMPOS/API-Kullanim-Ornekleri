@@ -1,0 +1,90 @@
+﻿@using WebMvc.DTOs.Pazaryeri_TP_Islem_Sorgulama;
+@using WebMvc.Models.PazaryeriTPIslemSorgulama;
+@model PazaryeriTPIslemSorgulamaSonucViewModel
+@{
+    ViewData["Title"] = "PazaryeriTPIslemSorgulama";
+    ViewData["Menu"] = "8/6";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Pazaryeri İşlem Sorgulama (Pazaryeri_TP_Islem_Sorgulama)</h3>
+</div>
+@if (Model.Sonuc is not "0")
+{
+    <div class="pt-2 ps-2" style="width: calc(100% - 40px)">
+        @{
+            if (Model.Sonuc == "1")
+            {
+                <div class="alert alert-success" role="alert">
+                    Sonuç Başarılı!
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    İşlem Başarısız!
+                </div>
+            }
+        }
+    </div>
+    <table class="table table-bordered ms-2 mt-2" style="width: calc(100% - 50px)">
+        <thead>
+            <tr>
+                <th scope="col">Parametre</th>
+                <th scope="col">Alt Parametre</th>
+                <th scope="col">Değer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.DT_Bilgi != null)
+                {
+                    foreach (Pazaryeri_TP_Islem_SorgulamaDT_BilgiDTO dt_bilgi in @Model.DT_Bilgi)
+                    {
+                        <tr>
+                            <th scope="row" rowspan="8">DT_Bilgi</th>
+                            <th scope="row">PYSiparis_GUID</th>
+                            <td>@dt_bilgi.PYSiparis_GUID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Durum</th>
+                            <td>@dt_bilgi.Durum</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Durum_Str</th>
+                            <td>@dt_bilgi.Durum_Str</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tutar_Urun</th>
+                            <td>@dt_bilgi.Tutar_Urun</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tutar_Odenecek</th>
+                            <td>@dt_bilgi.Tutar_Odenecek</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GUID_AltUyeIsyeri</th>
+                            <td>@dt_bilgi.GUID_AltUyeIsyeri</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SanalPOS_Islem_ID</th>
+                            <td>@dt_bilgi.SanalPOS_Islem_ID</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tarih</th>
+                            <td>@dt_bilgi.Tarih</td>
+                        </tr>
+                    }
+                }
+            }
+            <tr>
+                <th scope="row" colspan="2">Sonuc</th>
+                <td>@Model.Sonuc</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="2">Sonuc_Str</th>
+                <td>@Model.Sonuc_Str</td>
+            </tr>
+        </tbody>
+    </table>
+}
+<br />

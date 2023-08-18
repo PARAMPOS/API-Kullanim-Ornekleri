@@ -1,0 +1,84 @@
+﻿@using WebMvc.Models.TPKKVerify;
+@model TPKKVerifyViewModel
+@{
+    ViewData["Title"] = "TPKKVerify";
+    ViewData["Menu"] = "4/8";
+}
+<div class="d-flex justify-content-center mt-2" style="width: 100%">
+    <h3>Kart Doğrulama (TP_KK_Verify)</h3>
+</div>
+<form asp-controller="/Op" asp-action="TPKKVerify" method="post">
+    <div class="d-flex p-3">
+        <section class="input-section col-10">
+            <div class="me-5 pt-2" style="border: solid #aeb5bd; border-width: 0px 0px 1px 0px;">
+                <span class="fs-3">Client</span>
+                <div class="form-row d-flex gap-5 pb-2">
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_CODE"></label>
+                        <input class="form-control" asp-for="G.CLIENT_CODE" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_USERNAME"></label>
+                        <input class="form-control" asp-for="G.CLIENT_USERNAME" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" asp-for="G.CLIENT_PASSWORD"></label>
+                        <input class="form-control" asp-for="G.CLIENT_PASSWORD" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_No"></label>
+                <input class="form-control" asp-for="KK_No" auto-fill-card-no />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_SK_Ay"></label>
+                <input class="form-control" asp-for="KK_SK_Ay" auto-fill-card-expirationmonth />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_SK_Yil"></label>
+                <input class="form-control" asp-for="KK_SK_Yil" auto-fill-card-expirationyear />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="KK_CVC"></label>
+                <input class="form-control" asp-for="KK_CVC" auto-fill-card-cvc />
+            </div>
+            <div class="col-md-9">
+                <label class="form-label" asp-for="Return_URL"></label>
+                <input class="form-control" asp-for="Return_URL" />
+            </div>
+            <div id="data-collapse" class="collapse mb-4">
+                <div class="card card-body">
+                    <div class="form-row d-flex flex-wrap gap-5 pb-2">
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data1"></label>
+                            <input class="form-control" asp-for="Data1" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data2"></label>
+                            <input class="form-control" asp-for="Data2" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data3"></label>
+                            <input class="form-control" asp-for="Data3" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data4"></label>
+                            <input class="form-control" asp-for="Data4" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label" asp-for="Data5"></label>
+                            <input class="form-control" asp-for="Data5" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="pay" class="btn btn-primary mt-4 w-100">Gönder</button>
+        </section>
+        <section class="card-section col-2">
+            <partial name="_TestCardsPartial" />
+        </section>
+    </div>
+    @Html.AntiForgeryToken()
+</form>
+<br />
