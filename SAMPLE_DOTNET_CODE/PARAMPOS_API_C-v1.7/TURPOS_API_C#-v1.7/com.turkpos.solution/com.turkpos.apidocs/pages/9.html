@@ -1,0 +1,468 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load9();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_9{left:830px;top:1211px;}
+#t2_9{left:842px;top:1211px;}
+#t3_9{left:852px;top:1211px;}
+#t4_9{left:206px;top:109px;}
+#t5_9{left:206px;top:144px;}
+#t6_9{left:298px;top:144px;}
+#t7_9{left:357px;top:144px;}
+#t8_9{left:560px;top:144px;}
+#t9_9{left:746px;top:144px;}
+#ta_9{left:206px;top:178px;}
+#tb_9{left:206px;top:212px;}
+#tc_9{left:206px;top:247px;}
+#td_9{left:458px;top:247px;}
+#te_9{left:206px;top:281px;}
+#tf_9{left:206px;top:345px;}
+#tg_9{left:307px;top:345px;}
+#th_9{left:405px;top:346px;}
+#ti_9{left:214px;top:382px;}
+#tj_9{left:432px;top:382px;}
+#tk_9{left:498px;top:382px;}
+#tl_9{left:539px;top:382px;}
+#tm_9{left:214px;top:409px;}
+#tn_9{left:434px;top:409px;}
+#to_9{left:539px;top:409px;}
+#tp_9{left:214px;top:454px;}
+#tq_9{left:442px;top:454px;}
+#tr_9{left:499px;top:454px;}
+#ts_9{left:539px;top:433px;}
+#tt_9{left:539px;top:454px;}
+#tu_9{left:539px;top:475px;}
+#tv_9{left:214px;top:499px;}
+#tw_9{left:438px;top:499px;}
+#tx_9{left:495px;top:499px;}
+#ty_9{left:539px;top:499px;}
+#tz_9{left:214px;top:526px;}
+#t10_9{left:438px;top:526px;}
+#t11_9{left:490px;top:526px;}
+#t12_9{left:539px;top:526px;}
+#t13_9{left:214px;top:553px;}
+#t14_9{left:438px;top:553px;}
+#t15_9{left:495px;top:553px;}
+#t16_9{left:539px;top:553px;}
+#t17_9{left:214px;top:579px;}
+#t18_9{left:438px;top:579px;}
+#t19_9{left:499px;top:579px;}
+#t1a_9{left:539px;top:579px;}
+#t1b_9{left:214px;top:606px;}
+#t1c_9{left:438px;top:606px;}
+#t1d_9{left:499px;top:606px;}
+#t1e_9{left:539px;top:606px;}
+#t1f_9{left:214px;top:633px;}
+#t1g_9{left:438px;top:633px;}
+#t1h_9{left:499px;top:633px;}
+#t1i_9{left:539px;top:633px;}
+#t1j_9{left:214px;top:667px;}
+#t1k_9{left:438px;top:667px;}
+#t1l_9{left:495px;top:667px;}
+#t1m_9{left:539px;top:657px;}
+#t1n_9{left:539px;top:678px;}
+#t1o_9{left:214px;top:710px;}
+#t1p_9{left:438px;top:710px;}
+#t1q_9{left:490px;top:710px;}
+#t1r_9{left:539px;top:699px;}
+#t1s_9{left:539px;top:720px;}
+#t1t_9{left:214px;top:752px;}
+#t1u_9{left:438px;top:752px;}
+#t1v_9{left:490px;top:752px;}
+#t1w_9{left:539px;top:742px;}
+#t1x_9{left:539px;top:762px;}
+#t1y_9{left:214px;top:815px;}
+#t1z_9{left:438px;top:815px;}
+#t20_9{left:495px;top:815px;}
+#t21_9{left:539px;top:784px;}
+#t22_9{left:689px;top:784px;}
+#t23_9{left:539px;top:805px;}
+#t24_9{left:539px;top:826px;}
+#t25_9{left:539px;top:846px;}
+#t26_9{left:214px;top:871px;}
+#t27_9{left:438px;top:871px;}
+#t28_9{left:490px;top:871px;}
+#t29_9{left:539px;top:871px;}
+#t2a_9{left:214px;top:905px;}
+#t2b_9{left:442px;top:905px;}
+#t2c_9{left:499px;top:905px;}
+#t2d_9{left:539px;top:895px;}
+#t2e_9{left:539px;top:916px;}
+#t2f_9{left:214px;top:948px;}
+#t2g_9{left:438px;top:948px;}
+#t2h_9{left:501px;top:948px;}
+#t2i_9{left:539px;top:937px;}
+#t2j_9{left:640px;top:937px;}
+#t2k_9{left:539px;top:958px;}
+#t2l_9{left:214px;top:1000px;}
+#t2m_9{left:438px;top:1000px;}
+#t2n_9{left:501px;top:1000px;}
+#t2o_9{left:539px;top:979px;}
+#t2p_9{left:539px;top:1000px;}
+#t2q_9{left:539px;top:1021px;}
+#t2r_9{left:214px;top:1045px;}
+#t2s_9{left:438px;top:1045px;}
+#t2t_9{left:501px;top:1045px;}
+#t2u_9{left:539px;top:1045px;}
+#t2v_9{left:214px;top:1080px;}
+#t2w_9{left:438px;top:1080px;}
+#t2x_9{left:501px;top:1080px;}
+#t2y_9{left:539px;top:1069px;}
+#t2z_9{left:539px;top:1090px;}
+#t30_9{left:562px;top:1090px;}
+#t31_9{left:214px;top:1114px;}
+#t32_9{left:438px;top:1114px;}
+#t33_9{left:495px;top:1114px;}
+#t34_9{left:539px;top:1114px;}
+#t35_9{left:214px;top:1141px;}
+#t36_9{left:438px;top:1141px;}
+#t37_9{left:490px;top:1141px;}
+#t38_9{left:539px;top:1141px;}
+
+.s10_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans9;
+	color: rgb(0,112,192);
+}
+
+.s5_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold9;
+	color: rgb(255,0,0);
+}
+
+.s1_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold9;
+	color: rgb(0,0,0);
+}
+
+.s7_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic9;
+	color: rgb(0,0,0);
+}
+
+.s8_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold9;
+	color: rgb(0,0,0);
+}
+
+.s3_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold9;
+	color: rgb(0,0,0);
+}
+
+.s6_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic9;
+	color: rgb(0,0,0);
+}
+
+.s2_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri9;
+	color: rgb(0,0,0);
+}
+
+.s9_9{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans9;
+	color: rgb(0,0,0);
+}
+
+.s4_9{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans9;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts9" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri9;
+	src :url("9/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold9;
+	src :url("9/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold9;
+	src :url("9/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic9;
+	src :url("9/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans9;
+	src :url("9/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_9" class="t s1_9">9 </div>
+<div id="t2_9" class="t s2_9">/ </div>
+<div id="t3_9" class="t s1_9">16</div>
+<div id="t4_9" class="t s3_9">Komisyon Dahil Sipariş Tutarı Hesaplama </div>
+<div id="t5_9" class="t s4_9">Komisyon </div>
+<div id="t6_9" class="t s4_9">Oran: </div>
+<div id="t7_9" class="t s5_9">TP_Ozel_Oran_SK_Liste</div>
+<div id="t8_9" class="t s4_9">metodundan seçilen </div>
+<div id="t9_9" class="t s4_9">taksitin </div>
+<div id="ta_9" class="t s4_9">komisyon oranı </div>
+<div id="tb_9" class="t s4_9">Islem_Tutar: Siparişinizin tutarı </div>
+<div id="tc_9" class="t s3_9">Toplam_Tutar = Islem_Tutar </div>
+<div id="td_9" class="t s3_9">+ ((Islem_Tutar x Komisyon Oran) / 100)</div>
+<div id="te_9" class="t s4_9">şeklindedir. </div>
+<div id="tf_9" class="t s6_9">Gönderilecek</div>
+<div id="tg_9" class="t s6_9">Parametreler</div>
+<div id="th_9" class="t s7_9">: </div>
+<div id="ti_9" class="t s8_9">Parametre </div>
+<div id="tj_9" class="t s8_9">Tip </div>
+<div id="tk_9" class="t s8_9">U </div>
+<div id="tl_9" class="t s8_9">Açıklama </div>
+<div id="tm_9" class="t s9_9">G </div>
+<div id="tn_9" class="t s9_9">NS </div>
+<div id="to_9" class="t s9_9">ST_WS_Guvenlik Nesnesi </div>
+<div id="tp_9" class="t s9_9">SanalPOS_ID </div>
+<div id="tq_9" class="t s9_9">I </div>
+<div id="tr_9" class="t s9_9">4 </div>
+<div id="ts_9" class="t s10_9">TP_Ozel_Oran_SK_Liste metodundan </div>
+<div id="tt_9" class="t s10_9">müşteriye seçtirilen Kart Markasının </div>
+<div id="tu_9" class="t s10_9">SanalPOS_ID değeri </div>
+<div id="tv_9" class="t s9_9">GUID </div>
+<div id="tw_9" class="t s9_9">N </div>
+<div id="tx_9" class="t s9_9">36 </div>
+<div id="ty_9" class="t s9_9">Üye İşyerine ait Anahtar </div>
+<div id="tz_9" class="t s9_9">KK_Sahibi </div>
+<div id="t10_9" class="t s9_9">N </div>
+<div id="t11_9" class="t s9_9">100 </div>
+<div id="t12_9" class="t s9_9">Kredi Kartı Sahibi </div>
+<div id="t13_9" class="t s9_9">KK_No </div>
+<div id="t14_9" class="t s9_9">N </div>
+<div id="t15_9" class="t s9_9">16 </div>
+<div id="t16_9" class="t s9_9">Kredi Kartı numarası </div>
+<div id="t17_9" class="t s9_9">KK_SK_Ay </div>
+<div id="t18_9" class="t s9_9">N </div>
+<div id="t19_9" class="t s9_9">2 </div>
+<div id="t1a_9" class="t s9_9">2 hane Son Kullanma Ay </div>
+<div id="t1b_9" class="t s9_9">KK_SK_Yil </div>
+<div id="t1c_9" class="t s9_9">N </div>
+<div id="t1d_9" class="t s9_9">4 </div>
+<div id="t1e_9" class="t s9_9">4 haneli Son Kullanma Yıl </div>
+<div id="t1f_9" class="t s9_9">KK_CVC </div>
+<div id="t1g_9" class="t s9_9">N </div>
+<div id="t1h_9" class="t s9_9">3 </div>
+<div id="t1i_9" class="t s9_9">CVC Kodu </div>
+<div id="t1j_9" class="t s9_9">KK_Sahibi_GSM </div>
+<div id="t1k_9" class="t s9_9">N </div>
+<div id="t1l_9" class="t s9_9">10 </div>
+<div id="t1m_9" class="t s9_9">Kredi Kartı Sahibi GSM No, Başında 0 </div>
+<div id="t1n_9" class="t s9_9">olmadan (5xxxxxxxxx) </div>
+<div id="t1o_9" class="t s9_9">Hata_URL </div>
+<div id="t1p_9" class="t s9_9">N </div>
+<div id="t1q_9" class="t s9_9">256 </div>
+<div id="t1r_9" class="t s9_9">Ödeme işlemi başarısız olursa </div>
+<div id="t1s_9" class="t s9_9">yönlenecek sayfa adresi </div>
+<div id="t1t_9" class="t s9_9">Basarili_URL </div>
+<div id="t1u_9" class="t s9_9">N </div>
+<div id="t1v_9" class="t s9_9">256 </div>
+<div id="t1w_9" class="t s9_9">Ödeme işlemi başarılı olursa </div>
+<div id="t1x_9" class="t s9_9">yönlenecek sayfa adresi </div>
+<div id="t1y_9" class="t s9_9">Siparis_ID </div>
+<div id="t1z_9" class="t s9_9">N </div>
+<div id="t20_9" class="t s9_9">50 </div>
+<div id="t21_9" class="t s9_9">Siparişe özel tekil ID. </div>
+<div id="t22_9" class="t s10_9">Bu değeri daha </div>
+<div id="t23_9" class="t s10_9">önce gönderdiyseniz sistem yeni </div>
+<div id="t24_9" class="t s10_9">Siparis_ID atar. İşlem sonucunda bu </div>
+<div id="t25_9" class="t s10_9">Siparis_ID yi döner. </div>
+<div id="t26_9" class="t s9_9">Siparis_Aciklama </div>
+<div id="t27_9" class="t s9_9">N </div>
+<div id="t28_9" class="t s9_9">250 </div>
+<div id="t29_9" class="t s9_9">Siparişe ait açıklama </div>
+<div id="t2a_9" class="t s9_9">Taksit </div>
+<div id="t2b_9" class="t s9_9">I </div>
+<div id="t2c_9" class="t s9_9">2 </div>
+<div id="t2d_9" class="t s9_9">Seçilen Taksit Sayısı. Tek çekim için 1 </div>
+<div id="t2e_9" class="t s9_9">gönderiniz. </div>
+<div id="t2f_9" class="t s9_9">Islem_Tutar </div>
+<div id="t2g_9" class="t s9_9">N </div>
+<div id="t2h_9" class="t s9_9">- </div>
+<div id="t2i_9" class="t s9_9">Sipariş Tutarı, </div>
+<div id="t2j_9" class="t s10_9">(sadece virgüllü kuruş </div>
+<div id="t2k_9" class="t s10_9">formatında 1000,50) </div>
+<div id="t2l_9" class="t s9_9">Toplam_Tutar </div>
+<div id="t2m_9" class="t s9_9">N </div>
+<div id="t2n_9" class="t s9_9">- </div>
+<div id="t2o_9" class="t s9_9">Komisyon Dahil Sipariş Tutarı, </div>
+<div id="t2p_9" class="t s10_9">(sadece virgüllü kuruş formatında </div>
+<div id="t2q_9" class="t s10_9">1000,50) </div>
+<div id="t2r_9" class="t s9_9">Islem_Hash </div>
+<div id="t2s_9" class="t s9_9">N </div>
+<div id="t2t_9" class="t s9_9">- </div>
+<div id="t2u_9" class="t s9_9">İşlem Hash Değeri </div>
+<div id="t2v_9" class="t s9_9">Islem_ID </div>
+<div id="t2w_9" class="t s9_9">N </div>
+<div id="t2x_9" class="t s9_9">- </div>
+<div id="t2y_9" class="t s9_9">İşleme ait Sipariş ID haricinde tekil </div>
+<div id="t2z_9" class="t s9_9">ID, </div>
+<div id="t30_9" class="t s10_9">opsiyoneldir. </div>
+<div id="t31_9" class="t s9_9">IPAdr </div>
+<div id="t32_9" class="t s9_9">N </div>
+<div id="t33_9" class="t s9_9">50 </div>
+<div id="t34_9" class="t s9_9">IP Adresi </div>
+<div id="t35_9" class="t s9_9">Ref_URL </div>
+<div id="t36_9" class="t s9_9">N </div>
+<div id="t37_9" class="t s9_9">256 </div>
+<div id="t38_9" class="t s9_9">Ödemenin gerçekleştiği sayfanın </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg9Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg9"><img src="9/9.jpg" id="pdf9" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld9" type="text/javascript">
+
+var isIE = false;
+var f9 = [['t4_9',1380],['t8_9',682],['ta_9',484],['tb_9',962],['tc_9',950],['td_9',1376],['to_9',701],['ts_9',1040],['tt_9',1023],['tu_9',557],['ty_9',679],['t12_9',488],['t16_9',584],['t1a_9',687],['t1e_9',714],['t1i_9',278],['t1m_9',1044],['t1n_9',627],['t1r_9',851],['t1s_9',677],['t1w_9',808],['t1x_9',677],['t21_9',583],['t22_9',431],['t23_9',922],['t24_9',1017],['t25_9',544],['t29_9',578],['t2d_9',1036],['t2i_9',388],['t2j_9',619],['t2k_9',578],['t2o_9',847],['t2p_9',955],['t2u_9',517],['t2y_9',973],['t34_9',249],['t38_9',924]];
+function load9(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f9);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 117;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_9");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

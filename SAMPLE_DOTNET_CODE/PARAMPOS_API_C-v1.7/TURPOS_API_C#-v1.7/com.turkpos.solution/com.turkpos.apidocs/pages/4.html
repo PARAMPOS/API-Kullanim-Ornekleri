@@ -1,0 +1,434 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load4();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_4{left:830px;top:1211px;}
+#t2_4{left:842px;top:1211px;}
+#t3_4{left:852px;top:1211px;}
+#t4_4{left:162px;top:109px;}
+#t5_4{left:206px;top:154px;}
+#t6_4{left:206px;top:188px;}
+#t7_4{left:206px;top:230px;}
+#t8_4{left:206px;top:271px;}
+#t9_4{left:214px;top:309px;}
+#ta_4{left:438px;top:309px;}
+#tb_4{left:498px;top:309px;}
+#tc_4{left:539px;top:309px;}
+#td_4{left:214px;top:336px;}
+#te_4{left:439px;top:336px;}
+#tf_4{left:501px;top:336px;}
+#tg_4{left:539px;top:336px;}
+#th_4{left:214px;top:362px;}
+#ti_4{left:444px;top:362px;}
+#tj_4{left:495px;top:362px;}
+#tk_4{left:539px;top:362px;}
+#tl_4{left:206px;top:417px;}
+#tm_4{left:214px;top:454px;}
+#tn_4{left:438px;top:454px;}
+#to_4{left:498px;top:454px;}
+#tp_4{left:539px;top:454px;}
+#tq_4{left:214px;top:481px;}
+#tr_4{left:445px;top:481px;}
+#ts_4{left:501px;top:481px;}
+#tt_4{left:539px;top:481px;}
+#tu_4{left:214px;top:508px;}
+#tv_4{left:444px;top:508px;}
+#tw_4{left:495px;top:508px;}
+#tx_4{left:539px;top:508px;}
+#ty_4{left:214px;top:542px;}
+#tz_4{left:444px;top:542px;}
+#t10_4{left:495px;top:542px;}
+#t11_4{left:539px;top:532px;}
+#t12_4{left:539px;top:553px;}
+#t13_4{left:214px;top:585px;}
+#t14_4{left:444px;top:585px;}
+#t15_4{left:495px;top:585px;}
+#t16_4{left:539px;top:574px;}
+#t17_4{left:539px;top:595px;}
+#t18_4{left:214px;top:619px;}
+#t19_4{left:447px;top:619px;}
+#t1a_4{left:499px;top:619px;}
+#t1b_4{left:539px;top:619px;}
+#t1c_4{left:214px;top:646px;}
+#t1d_4{left:444px;top:646px;}
+#t1e_4{left:495px;top:646px;}
+#t1f_4{left:539px;top:646px;}
+#t1g_4{left:214px;top:673px;}
+#t1h_4{left:444px;top:673px;}
+#t1i_4{left:501px;top:673px;}
+#t1j_4{left:539px;top:673px;}
+#t1k_4{left:214px;top:699px;}
+#t1l_4{left:443px;top:699px;}
+#t1m_4{left:501px;top:699px;}
+#t1n_4{left:539px;top:699px;}
+#t1o_4{left:214px;top:726px;}
+#t1p_4{left:443px;top:726px;}
+#t1q_4{left:501px;top:726px;}
+#t1r_4{left:539px;top:726px;}
+#t1s_4{left:214px;top:753px;}
+#t1t_4{left:443px;top:753px;}
+#t1u_4{left:501px;top:753px;}
+#t1v_4{left:539px;top:753px;}
+#t1w_4{left:214px;top:780px;}
+#t1x_4{left:443px;top:780px;}
+#t1y_4{left:501px;top:780px;}
+#t1z_4{left:539px;top:780px;}
+#t20_4{left:214px;top:806px;}
+#t21_4{left:443px;top:806px;}
+#t22_4{left:501px;top:806px;}
+#t23_4{left:539px;top:806px;}
+#t24_4{left:214px;top:833px;}
+#t25_4{left:443px;top:833px;}
+#t26_4{left:501px;top:833px;}
+#t27_4{left:539px;top:833px;}
+#t28_4{left:214px;top:860px;}
+#t29_4{left:443px;top:860px;}
+#t2a_4{left:501px;top:860px;}
+#t2b_4{left:539px;top:860px;}
+#t2c_4{left:214px;top:887px;}
+#t2d_4{left:443px;top:887px;}
+#t2e_4{left:501px;top:887px;}
+#t2f_4{left:539px;top:887px;}
+#t2g_4{left:214px;top:913px;}
+#t2h_4{left:443px;top:913px;}
+#t2i_4{left:501px;top:913px;}
+#t2j_4{left:539px;top:913px;}
+#t2k_4{left:206px;top:961px;}
+#t2l_4{left:400px;top:961px;}
+#t2m_4{left:420px;top:961px;}
+#t2n_4{left:460px;top:961px;}
+#t2o_4{left:479px;top:961px;}
+#t2p_4{left:634px;top:961px;}
+#t2q_4{left:662px;top:961px;}
+#t2r_4{left:206px;top:995px;}
+
+.s10_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold4;
+	color: rgb(0,112,192);
+}
+
+.s1_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold4;
+	color: rgb(0,0,0);
+}
+
+.s3_4{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold4;
+	color: rgb(0,0,0);
+}
+
+.s5_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold4;
+	color: rgb(0,0,0);
+}
+
+.s6_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic4;
+	color: rgb(0,0,0);
+}
+
+.s8_4{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans4;
+	color: rgb(0,0,0);
+}
+
+.s2_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri4;
+	color: rgb(0,0,0);
+}
+
+.s9_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans4;
+	color: rgb(0,112,192);
+}
+
+.s7_4{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold4;
+	color: rgb(0,0,0);
+}
+
+.s4_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans4;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts4" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri4;
+	src :url("4/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold4;
+	src :url("4/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold4;
+	src :url("4/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic4;
+	src :url("4/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans4;
+	src :url("4/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_4" class="t s1_4">4 </div>
+<div id="t2_4" class="t s2_4">/ </div>
+<div id="t3_4" class="t s1_4">16</div>
+<div id="t4_4" class="t s3_4">5.1. <a href="../turkpos.api/OzelOranListeForm.aspx">TP_Ozel_Oran_Liste</a> </div>
+<div id="t5_4" class="t s4_4">Firma tarafından üye işyerine özel verilmiş sanal pos oranları listelenir. Üye </div>
+<div id="t6_4" class="t s4_4">işyeri bu oranlar üzerinde değişiklik yapabilir (Metod 5.2) </div>
+<div id="t7_4" class="t s5_4">MO_x : Üye İşyeri Oranı </div>
+<div id="t8_4" class="t s6_4">Gönderilecek Parametreler: </div>
+<div id="t9_4" class="t s7_4">Parametre</div>
+<div id="ta_4" class="t s7_4">Tip</div>
+<div id="tb_4" class="t s7_4">U</div>
+<div id="tc_4" class="t s7_4">Açıklama</div>
+<div id="td_4" class="t s8_4">G </div>
+<div id="te_4" class="t s8_4">NS </div>
+<div id="tf_4" class="t s8_4">- </div>
+<div id="tg_4" class="t s8_4">ST_WS_Guvenlik Nesnesi </div>
+<div id="th_4" class="t s8_4">GUID </div>
+<div id="ti_4" class="t s8_4">N </div>
+<div id="tj_4" class="t s8_4">36 </div>
+<div id="tk_4" class="t s8_4">Üye İşyerine ait Anahtar </div>
+<div id="tl_4" class="t s6_4">Sonuç Parametreleri: </div>
+<div id="tm_4" class="t s7_4">Parametre</div>
+<div id="tn_4" class="t s7_4">Tip</div>
+<div id="to_4" class="t s7_4">U</div>
+<div id="tp_4" class="t s7_4">Açıklama</div>
+<div id="tq_4" class="t s8_4">Ozel_Oran_ID </div>
+<div id="tr_4" class="t s8_4">L </div>
+<div id="ts_4" class="t s8_4">- </div>
+<div id="tt_4" class="t s8_4">Özel Oran ID si </div>
+<div id="tu_4" class="t s8_4">GUID </div>
+<div id="tv_4" class="t s8_4">N </div>
+<div id="tw_4" class="t s8_4">36 </div>
+<div id="tx_4" class="t s8_4">Üye İşyerine ait Anahtar </div>
+<div id="ty_4" class="t s8_4">Tarih_Bas </div>
+<div id="tz_4" class="t s8_4">N </div>
+<div id="t10_4" class="t s8_4">10 </div>
+<div id="t11_4" class="t s8_4">Özel Oranların aktif olacağı tarih </div>
+<div id="t12_4" class="t s8_4">(Örn. dd.MM.yyyy) </div>
+<div id="t13_4" class="t s8_4">Tarih_Bit </div>
+<div id="t14_4" class="t s8_4">N </div>
+<div id="t15_4" class="t s8_4">10 </div>
+<div id="t16_4" class="t s8_4">Özel Oranların pasif olacağı tarih </div>
+<div id="t17_4" class="t s8_4">(Örn. dd.MM.yyyy) </div>
+<div id="t18_4" class="t s8_4">SanalPOS_ID </div>
+<div id="t19_4" class="t s8_4">I </div>
+<div id="t1a_4" class="t s8_4">4 </div>
+<div id="t1b_4" class="t s8_4">Sanal Pos numarası </div>
+<div id="t1c_4" class="t s8_4">Kredi_Karti_Banka </div>
+<div id="t1d_4" class="t s8_4">N </div>
+<div id="t1e_4" class="t s8_4">20 </div>
+<div id="t1f_4" class="t s8_4">Kredi Kartı Markası (Bonus, Axess vs) </div>
+<div id="t1g_4" class="t s8_4">Kredi_Karti_Banka_Gorsel </div>
+<div id="t1h_4" class="t s8_4">N </div>
+<div id="t1i_4" class="t s8_4">- </div>
+<div id="t1j_4" class="t s8_4">Kredi Kartı Marka Görseli </div>
+<div id="t1k_4" class="t s8_4">MO_01 </div>
+<div id="t1l_4" class="t s8_4">M </div>
+<div id="t1m_4" class="t s8_4">- </div>
+<div id="t1n_4" class="t s8_4">Tek Çekim Oranı </div>
+<div id="t1o_4" class="t s8_4">MO_02 </div>
+<div id="t1p_4" class="t s8_4">M </div>
+<div id="t1q_4" class="t s8_4">- </div>
+<div id="t1r_4" class="t s8_4">2. Taksit Oranı </div>
+<div id="t1s_4" class="t s8_4">MO_03 </div>
+<div id="t1t_4" class="t s8_4">M </div>
+<div id="t1u_4" class="t s8_4">- </div>
+<div id="t1v_4" class="t s8_4">3. Taksit Oranı </div>
+<div id="t1w_4" class="t s8_4">MO_04 </div>
+<div id="t1x_4" class="t s8_4">M </div>
+<div id="t1y_4" class="t s8_4">- </div>
+<div id="t1z_4" class="t s8_4">4. Taksit Oranı </div>
+<div id="t20_4" class="t s8_4">MO_05 </div>
+<div id="t21_4" class="t s8_4">M </div>
+<div id="t22_4" class="t s8_4">- </div>
+<div id="t23_4" class="t s8_4">5. Taksit Oranı </div>
+<div id="t24_4" class="t s8_4">MO_06 </div>
+<div id="t25_4" class="t s8_4">M </div>
+<div id="t26_4" class="t s8_4">- </div>
+<div id="t27_4" class="t s8_4">6. Taksit Oranı </div>
+<div id="t28_4" class="t s8_4">MO_07 </div>
+<div id="t29_4" class="t s8_4">M </div>
+<div id="t2a_4" class="t s8_4">- </div>
+<div id="t2b_4" class="t s8_4">7. Taksit Oranı </div>
+<div id="t2c_4" class="t s8_4">MO_08 </div>
+<div id="t2d_4" class="t s8_4">M </div>
+<div id="t2e_4" class="t s8_4">- </div>
+<div id="t2f_4" class="t s8_4">8. Taksit Oranı </div>
+<div id="t2g_4" class="t s8_4">MO_09 </div>
+<div id="t2h_4" class="t s8_4">M </div>
+<div id="t2i_4" class="t s8_4">- </div>
+<div id="t2j_4" class="t s8_4">9. Taksit Oranı </div>
+<div id="t2k_4" class="t s9_4">Herhangi bir taksit oranı </div>
+<div id="t2l_4" class="t s10_4">-1</div>
+<div id="t2m_4" class="t s9_4">veya </div>
+<div id="t2n_4" class="t s10_4">-2</div>
+<div id="t2o_4" class="t s9_4">ise diğer bir deyişle </div>
+<div id="t2p_4" class="t s10_4">“0”</div>
+<div id="t2q_4" class="t s9_4">dan küçük olduğu </div>
+<div id="t2r_4" class="t s9_4">durumlarda bu taksit seçeneği o kart markası için kullanılamaz demektir.  </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg4Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg4"><img src="4/4.jpg" id="pdf4" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld4" type="text/javascript">
+
+var isIE = false;
+var f4 = [['t4_4',850],['t5_4',2391],['t6_4',1785],['t7_4',782],['t8_4',816],['tg_4',701],['tk_4',679],['tl_4',627],['tt_4',423],['tx_4',679],['t11_4',915],['t12_4',519],['t16_4',929],['t17_4',519],['t1b_4',558],['t1f_4',1042],['t1j_4',711],['t1n_4',468],['t1r_4',408],['t1v_4',408],['t1z_4',408],['t23_4',408],['t27_4',408],['t2b_4',408],['t2f_4',408],['t2j_4',408],['t2k_4',760],['t2o_4',601],['t2q_4',558],['t2r_4',2308]];
+function load4(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f4);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 100;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_4");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

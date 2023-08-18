@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2570166C-191B-4B36-9B92-AF2035051B67}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.turkpos.apidocs</RootNamespace>
+    <AssemblyName>com.turkpos.apidocs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="pages\1.html" />
+    <Content Include="pages\10.html" />
+    <Content Include="pages\10\10.jpg" />
+    <Content Include="pages\11.html" />
+    <Content Include="pages\11\11.jpg" />
+    <Content Include="pages\12.html" />
+    <Content Include="pages\12\12.jpg" />
+    <Content Include="pages\13.html" />
+    <Content Include="pages\13\13.jpg" />
+    <Content Include="pages\14.html" />
+    <Content Include="pages\14\14.jpg" />
+    <Content Include="pages\15.html" />
+    <Content Include="pages\15\15.jpg" />
+    <Content Include="pages\16.html" />
+    <Content Include="pages\16\16.jpg" />
+    <Content Include="pages\1\1.svg" />
+    <Content Include="pages\1\img\1.png" />
+    <Content Include="pages\2.html" />
+    <Content Include="pages\2\2.svg" />
+    <Content Include="pages\3.html" />
+    <Content Include="pages\3\3.svg" />
+    <Content Include="pages\4.html" />
+    <Content Include="pages\4\4.svg" />
+    <Content Include="pages\5.html" />
+    <Content Include="pages\5\5.svg" />
+    <Content Include="pages\6.html" />
+    <Content Include="pages\6\6.svg" />
+    <Content Include="pages\7.html" />
+    <Content Include="pages\7\7.svg" />
+    <Content Include="pages\8.html" />
+    <Content Include="pages\8\8.svg" />
+    <Content Include="pages\9.html" />
+    <Content Include="pages\9\9.jpg" />
+    <Content Include="pages\assets\assets.png" />
+    <Content Include="pages\assets\bg.png" />
+    <Content Include="pages\assets\IDRViewer.css" />
+    <Content Include="pages\assets\IDRViewer.js" />
+    <Content Include="pages\assets\jquery-1.11.2.min.js" />
+    <Content Include="pages\assets\loading.gif" />
+    <Content Include="pages\PageDefault.aspx" />
+    <Content Include="pages\thumbnails\1.jpg" />
+    <Content Include="pages\thumbnails\2.jpg" />
+    <Content Include="pages\thumbnails\3.jpg" />
+    <Content Include="pages\thumbnails\4.jpg" />
+    <Content Include="pages\thumbnails\5.jpg" />
+    <Content Include="pages\thumbnails\6.jpg" />
+    <Content Include="pages\thumbnails\7.jpg" />
+    <Content Include="pages\thumbnails\8.jpg" />
+    <Content Include="turkpos.api\BINSanalPos.aspx" />
+    <Content Include="turkpos.api\ETSPreIslemOdeme.aspx" />
+    <Content Include="turkpos.api\IslemDekontGonder.aspx" />
+    <Content Include="turkpos.api\IslemIptalIadeProd.aspx" />
+    <Content Include="turkpos.api\IslemIzleme.aspx" />
+    <Content Include="turkpos.api\IslemSorgulama.aspx" />
+    <Content Include="turkpos.api\KartSakla.aspx" />
+    <Content Include="turkpos.api\KartSil.aspx" />
+    <Content Include="turkpos.api\KKSakliListe.aspx" />
+    <Content Include="turkpos.api\KKSakliOdeme.aspx" />
+    <Content Include="turkpos.api\MutabakatOzetProd.aspx" />
+    <Content Include="turkpos.api\OzelOranSKGuncelle.aspx" />
+    <Content Include="turkpos.api\OzelOranSKListeForm.aspx" />
+    <Content Include="turkpos.api\OzelOranListeForm.aspx" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\tr.com.ew.dmzws1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\tr.com.ew.dmzws1\service_ks.disco" />
+    <Content Include="turkpos.api\sonuc.aspx" />
+    <Content Include="Web References\tr.com.ew.dmzws1\ST_Sonuc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws1\ST_TP_Islem_Odeme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\tr.com.ew.dmzws1\service_ks.wsdl" />
+    <Content Include="Web References\tr.com.ew.dmzws1\ST_KS_Kart_Ekle.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws1\ST_KS_Kart_Liste.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\tr.com.ew.dmzws\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="turkpos.api\SHA2B64.aspx" />
+    <None Include="Web References\tr.com.ew.dmzws\service_turkpos_test.disco" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\PageDefault.aspx.cs">
+      <DependentUpon>PageDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\PageDefault.aspx.designer.cs">
+      <DependentUpon>PageDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\ApiForms.Master.cs">
+      <DependentUpon>ApiForms.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\ApiForms.Master.designer.cs">
+      <DependentUpon>ApiForms.Master</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\BINSanalPos.aspx.cs">
+      <DependentUpon>BINSanalPos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\BINSanalPos.aspx.designer.cs">
+      <DependentUpon>BINSanalPos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\ETSPreIslemOdeme.aspx.cs">
+      <DependentUpon>ETSPreIslemOdeme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\ETSPreIslemOdeme.aspx.designer.cs">
+      <DependentUpon>ETSPreIslemOdeme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\IslemDekontGonder.aspx.cs">
+      <DependentUpon>IslemDekontGonder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\IslemDekontGonder.aspx.designer.cs">
+      <DependentUpon>IslemDekontGonder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\IslemIptalIadeProd.aspx.cs">
+      <DependentUpon>IslemIptalIadeProd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\IslemIptalIadeProd.aspx.designer.cs">
+      <DependentUpon>IslemIptalIadeProd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\IslemIzleme.aspx.cs">
+      <DependentUpon>IslemIzleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\IslemIzleme.aspx.designer.cs">
+      <DependentUpon>IslemIzleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\IslemSorgulama.aspx.cs">
+      <DependentUpon>IslemSorgulama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\IslemSorgulama.aspx.designer.cs">
+      <DependentUpon>IslemSorgulama.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\KartSakla.aspx.cs">
+      <DependentUpon>KartSakla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\KartSakla.aspx.designer.cs">
+      <DependentUpon>KartSakla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\KartSil.aspx.cs">
+      <DependentUpon>KartSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\KartSil.aspx.designer.cs">
+      <DependentUpon>KartSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\KKSakliListe.aspx.cs">
+      <DependentUpon>KKSakliListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\KKSakliListe.aspx.designer.cs">
+      <DependentUpon>KKSakliListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\KKSakliOdeme.aspx.cs">
+      <DependentUpon>KKSakliOdeme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\KKSakliOdeme.aspx.designer.cs">
+      <DependentUpon>KKSakliOdeme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\MutabakatOzetProd.aspx.cs">
+      <DependentUpon>MutabakatOzetProd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\MutabakatOzetProd.aspx.designer.cs">
+      <DependentUpon>MutabakatOzetProd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranSKGuncelle.aspx.cs">
+      <DependentUpon>OzelOranSKGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranSKGuncelle.aspx.designer.cs">
+      <DependentUpon>OzelOranSKGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranSKListeForm.aspx.cs">
+      <DependentUpon>OzelOranSKListeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranSKListeForm.aspx.designer.cs">
+      <DependentUpon>OzelOranSKListeForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranListeForm.aspx.cs">
+      <DependentUpon>OzelOranListeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\OzelOranListeForm.aspx.designer.cs">
+      <DependentUpon>OzelOranListeForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\SHA2B64.aspx.cs">
+      <DependentUpon>SHA2B64.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\SHA2B64.aspx.designer.cs">
+      <DependentUpon>SHA2B64.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="turkpos.api\sonuc.aspx.cs">
+      <DependentUpon>sonuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="turkpos.api\sonuc.aspx.designer.cs">
+      <DependentUpon>sonuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.ew.dmzws1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.com.ew.dmzws\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pages\Page.Master" />
+    <Content Include="turkpos.api\ApiForms.Master" />
+    <Content Include="pages\1\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\1\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\1\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\1\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\2\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\2\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\2\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\2\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\3\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\3\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\3\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\3\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\3\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\4\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\4\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\4\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\4\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\4\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\5\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\5\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\5\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\5\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\5\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\6\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\6\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\6\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\6\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\6\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\7\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\7\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\7\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\7\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\7\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\8\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\8\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\8\fonts\ABCDEE-CenturyGothic-Bold.woff" />
+    <Content Include="pages\8\fonts\ABCDEE-CenturyGothic-Italic.woff" />
+    <Content Include="pages\8\fonts\ABCDEE-CenturyGothic.woff" />
+    <Content Include="pages\thumbnails\Thumbs.db" />
+    <Content Include="pages\10\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\10\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\10\fonts\ABCDEE-Consolas.woff" />
+    <Content Include="pages\10\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\10\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\10\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\11\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\11\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\11\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\11\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\11\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-Consolas.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\12\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-Consolas.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\13\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-Consolas.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\14\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\15\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\15\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\15\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\15\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\15\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\16\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\16\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\16\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\16\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="pages\9\fonts\ABCDEE-Calibri-Bold.woff" />
+    <Content Include="pages\9\fonts\ABCDEE-Calibri.woff" />
+    <Content Include="pages\9\fonts\ABCDEE-OpenSans-Bold.woff" />
+    <Content Include="pages\9\fonts\ABCDEE-OpenSans-Italic.woff" />
+    <Content Include="pages\9\fonts\ABCDEE-OpenSans.woff" />
+    <Content Include="Web References\tr.com.ew.dmzws\ST_Sonuc1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_TP_Islem_Odeme1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_Genel_Sonuc.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_KK_Saklama.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_TP_Islem_Odeme_BKM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_WMD_Pay.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\tr.com.ew.dmzws\ST_WMD_UCD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\tr.com.ew.dmzws\service_turkpos_test.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://dmzws.ew.com.tr/out.ws/service_ks.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.ew.dmzws1\</RelPath>
+      <UpdateFromURL>https://dmzws.ew.com.tr/out.ws/service_ks.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_turkpos_apidocs_tr_com_ew_dmzws1_TP_KS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://test-dmz.ew.com.tr:8080/turkpos.ws/service_turkpos_test.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.com.ew.dmzws\</RelPath>
+      <UpdateFromURL>http://test-dmz.ew.com.tr:8080/turkpos.ws/service_turkpos_test.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_turkpos_apidocs_service_turkpos_prod_TurkPos_x0020_WS_x0020_PROD</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>62317</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64317/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

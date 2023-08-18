@@ -1,0 +1,348 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load15();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_15{left:821px;top:1211px;}
+#t2_15{left:842px;top:1211px;}
+#t3_15{left:852px;top:1211px;}
+#t4_15{left:162px;top:109px;}
+#t5_15{left:206px;top:147px;}
+#t6_15{left:206px;top:201px;}
+#t7_15{left:214px;top:238px;}
+#t8_15{left:438px;top:238px;}
+#t9_15{left:498px;top:238px;}
+#ta_15{left:539px;top:238px;}
+#tb_15{left:214px;top:265px;}
+#tc_15{left:444px;top:265px;}
+#td_15{left:501px;top:265px;}
+#te_15{left:539px;top:265px;}
+#tf_15{left:206px;top:328px;}
+#tg_15{left:214px;top:365px;}
+#th_15{left:440px;top:365px;}
+#ti_15{left:500px;top:365px;}
+#tj_15{left:541px;top:365px;}
+#tk_15{left:214px;top:392px;}
+#tl_15{left:446px;top:392px;}
+#tm_15{left:503px;top:392px;}
+#tn_15{left:541px;top:390px;}
+#to_15{left:162px;top:468px;}
+#tp_15{left:206px;top:506px;}
+#tq_15{left:206px;top:540px;}
+#tr_15{left:206px;top:594px;}
+#ts_15{left:214px;top:631px;}
+#tt_15{left:438px;top:631px;}
+#tu_15{left:498px;top:631px;}
+#tv_15{left:539px;top:631px;}
+#tw_15{left:214px;top:658px;}
+#tx_15{left:439px;top:658px;}
+#ty_15{left:501px;top:658px;}
+#tz_15{left:539px;top:658px;}
+#t10_15{left:214px;top:703px;}
+#t11_15{left:444px;top:703px;}
+#t12_15{left:499px;top:703px;}
+#t13_15{left:539px;top:682px;}
+#t14_15{left:539px;top:703px;}
+#t15_15{left:539px;top:724px;}
+#t16_15{left:206px;top:784px;}
+#t17_15{left:214px;top:822px;}
+#t18_15{left:440px;top:822px;}
+#t19_15{left:500px;top:822px;}
+#t1a_15{left:541px;top:822px;}
+#t1b_15{left:214px;top:848px;}
+#t1c_15{left:446px;top:848px;}
+#t1d_15{left:503px;top:848px;}
+#t1e_15{left:541px;top:847px;}
+#t1f_15{left:135px;top:928px;}
+#t1g_15{left:162px;top:968px;}
+#t1h_15{left:714px;top:968px;}
+#t1i_15{left:162px;top:1002px;}
+#t1j_15{left:162px;top:1037px;}
+#t1k_15{left:175px;top:1106px;}
+#t1l_15{left:236px;top:1106px;}
+#t1m_15{left:191px;top:1132px;}
+#t1n_15{left:236px;top:1132px;}
+
+.s1_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold15;
+	color: rgb(0,0,0);
+}
+
+.s3_15{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold15;
+	color: rgb(0,0,0);
+}
+
+.s9_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold15;
+	color: rgb(0,0,0);
+}
+
+.s8_15{
+	FONT-SIZE: 79px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold15;
+	color: rgb(0,0,0);
+}
+
+.s5_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic15;
+	color: rgb(0,0,0);
+}
+
+.s7_15{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans15;
+	color: rgb(0,0,0);
+}
+
+.s2_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri15;
+	color: rgb(0,0,0);
+}
+
+.s6_15{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold15;
+	color: rgb(0,0,0);
+}
+
+.s4_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans15;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts15" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri15;
+	src :url("15/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold15;
+	src :url("15/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold15;
+	src :url("15/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic15;
+	src :url("15/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans15;
+	src :url("15/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_15" class="t s1_15">15 </div>
+<div id="t2_15" class="t s2_15">/ </div>
+<div id="t3_15" class="t s1_15">16</div>
+<div id="t4_15" class="t s3_15">5.9. <a href="../turkpos.api/SHA2B64.aspx">SHA2B64</a> </div>
+<div id="t5_15" class="t s4_15">Şifreli veri üretmek için kullanılır.  </div>
+<div id="t6_15" class="t s5_15">Gönderilecek Parametreler: </div>
+<div id="t7_15" class="t s6_15">Parametre</div>
+<div id="t8_15" class="t s6_15">Tip</div>
+<div id="t9_15" class="t s6_15">U</div>
+<div id="ta_15" class="t s6_15">Açıklama</div>
+<div id="tb_15" class="t s7_15">Data </div>
+<div id="tc_15" class="t s7_15">N </div>
+<div id="td_15" class="t s7_15">- </div>
+<div id="te_15" class="t s7_15">Şifrelenecek Veri </div>
+<div id="tf_15" class="t s5_15">Sonuç Parametreleri: </div>
+<div id="tg_15" class="t s6_15">Parametre</div>
+<div id="th_15" class="t s6_15">Tip</div>
+<div id="ti_15" class="t s6_15">U</div>
+<div id="tj_15" class="t s6_15">Açıklama</div>
+<div id="tk_15" class="t s7_15">Sonuc </div>
+<div id="tl_15" class="t s7_15">N </div>
+<div id="tm_15" class="t s7_15">- </div>
+<div id="tn_15" class="t s2_15">İşlem sonucu </div>
+<div id="to_15" class="t s3_15">5.10. <a href="../turkpos.api/BINSanalPos.aspx">BIN_SanalPos</a> </div>
+<div id="tp_15" class="t s4_15">Sistemde kayıtlı bin kodlarını ve işlem yapılabilecek SanalPOS_ID bilgisini </div>
+<div id="tq_15" class="t s4_15">öğrenebilirsiniz. Bilgilendirme amaçlıdır. </div>
+<div id="tr_15" class="t s5_15">Gönderilecek Parametreler: </div>
+<div id="ts_15" class="t s6_15">Parametre</div>
+<div id="tt_15" class="t s6_15">Tip</div>
+<div id="tu_15" class="t s6_15">U</div>
+<div id="tv_15" class="t s6_15">Açıklama</div>
+<div id="tw_15" class="t s7_15">G </div>
+<div id="tx_15" class="t s7_15">NS </div>
+<div id="ty_15" class="t s7_15">- </div>
+<div id="tz_15" class="t s7_15">ST_WS_Guvenlik Nesnesi </div>
+<div id="t10_15" class="t s7_15">BIN </div>
+<div id="t11_15" class="t s7_15">N </div>
+<div id="t12_15" class="t s7_15">6 </div>
+<div id="t13_15" class="t s7_15">Boş bırakılırsa tüm BIN kodları </div>
+<div id="t14_15" class="t s7_15">döner. Dolu gönderilişe o BIN </div>
+<div id="t15_15" class="t s7_15">koduna ait bilgiler döner. </div>
+<div id="t16_15" class="t s5_15">Sonuç Parametreleri: </div>
+<div id="t17_15" class="t s6_15">Parametre</div>
+<div id="t18_15" class="t s6_15">Tip</div>
+<div id="t19_15" class="t s6_15">U</div>
+<div id="t1a_15" class="t s6_15">Açıklama</div>
+<div id="t1b_15" class="t s7_15">Sonuc </div>
+<div id="t1c_15" class="t s7_15">N </div>
+<div id="t1d_15" class="t s7_15">- </div>
+<div id="t1e_15" class="t s2_15">İşlem sonucu </div>
+<div id="t1f_15" class="t s8_15">6. HATA KODLARI</div>
+<div id="t1g_15" class="t s4_15">Servislere gerçek ortamda HTTPS protokolü üzerinden erişilecektir. </div>
+<div id="t1h_15" class="t s9_15">İşlemlerin </div>
+<div id="t1i_15" class="t s9_15">gerçekleşmesi için kurum internet çıkış IP adresi veya IP Blokları, web sitesi </div>
+<div id="t1j_15" class="t s9_15">adresi iletilmeli ve tarafımızdan gerekli tanımlar yapılmalıdır. </div>
+<div id="t1k_15" class="t s6_15">Kodu</div>
+<div id="t1l_15" class="t s6_15">Açıklama</div>
+<div id="t1m_15" class="t s7_15">1 </div>
+<div id="t1n_15" class="t s7_15">Başarılı </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg15Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg15"><img src="15/15.jpg" id="pdf15" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld15" type="text/javascript">
+
+var isIE = false;
+var f15 = [['t4_15',466],['t5_15',1037],['t6_15',816],['te_15',472],['tf_15',627],['tn_15',357],['to_15',677],['tp_15',2385],['tq_15',1252],['tr_15',816],['tz_15',701],['t13_15',862],['t14_15',839],['t15_15',713],['t16_15',627],['t1e_15',357],['t1f_15',689],['t1g_15',2174],['t1i_15',2545],['t1j_15',2098]];
+function load15(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f15);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 60;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_15");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

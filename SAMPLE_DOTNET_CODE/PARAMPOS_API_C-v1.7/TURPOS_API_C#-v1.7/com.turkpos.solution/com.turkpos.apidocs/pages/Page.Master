@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="com.turkpos.apidocs.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TURK_E_PARA_D___Entegrasyon_TURKPOS_API_v1_5</title>
+    <link rel="stylesheet" type="text/css" href="assets/IDRViewer.css">
+    <script type="text/javascript">
+        var isIE = false;
+        function idrLoad() {
+            var bounds = [[910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286], [910, 1286]];
+            IDRViewer.makeNavBar(16, '.jpg', bounds, true);
+        }
+</script>
+    <script src="assets/IDRViewer.js" type="text/javascript"></script>
+    <script src="assets/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<!-- Background pattern courtesy of http://subtlepatterns.com/grey-washed-wall/ -->
+<body style="background: url('assets/bg.png') repeat scroll 0 0 transparent;">
+    <div id="left">
+        <div id="leftNav">
+            <div id="btnThumbnails" onclick="IDRViewer.toggleOutlines(false)" title="Thumbnails" class="navBtn inactive"></div>
+            <div id="btnOutlines" onclick="IDRViewer.toggleOutlines(true)" title="Bookmarks" class="navBtn inactive"></div>
+        </div>
+        <div id="leftContent">
+            <div id="thumbnailPanel"></div>
+            <div id="outlinePanel"></div>
+        </div>
+    </div>
+
+    <div id="main">
+
+        <div id="mainNav">
+            <div id="btnSideToggle" onclick="IDRViewer.toggleThumbnails();" class="navBtn">
+                <div title="Sidebar"></div>
+            </div>
+
+            <div id="btnPrev" title="Previous Page" onclick="IDRViewer.prev()" class="navBtn"></div>
+            <select id="goBtn" onchange="IDRViewer.goToPage(0)">
+            </select>
+            <span id="pgCount"></span>
+            <div id="btnNext" title="Next Page" onclick="IDRViewer.next()" class="navBtn"></div>
+
+            <div id="btnSelect" title="Select" onclick="IDRViewer.setSelectMode(0)" class="navBtn"></div>
+            <div id="btnMove" title="Pan" onclick="IDRViewer.setSelectMode(1)" class="navBtn"></div>
+
+            <div id="btnZoomOut" title="Zoom Out" onclick="IDRViewer.zoomOut()" class="navBtn"></div>
+            <select id="zoomBtn" onchange="IDRViewer.zoomUpdate()">
+                <option value="0">100%</option>
+                <option value="1">Gerçek Boyut</option>
+                <option value="2">Enine Sığdır</option>
+                <option value="3">Boyuna Sığdır</option>
+                <option value="4">Sayfayı Sığdır</option>
+                <option value="5">Otomatik</option>
+
+            </select>
+            <div id="btnZoomIn" title="Zoom In" onclick="IDRViewer.zoomIn()" class="navBtn"></div>
+            <div id="btnFullscreen" title="Fullscreen" onclick="IDRViewer.toggleFullScreen();" class="navBtn closed"></div>
+        </div>
+
+        <div id="mainContent">
+            <asp:ContentPlaceHolder ID="cphMain" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id="contentContainer">
+                <div id="jpedal"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">idrLoad();</script>
+</body>
+</html>

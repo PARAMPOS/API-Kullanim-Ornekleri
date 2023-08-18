@@ -1,0 +1,387 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load13();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_13{left:821px;top:1211px;}
+#t2_13{left:842px;top:1211px;}
+#t3_13{left:852px;top:1211px;}
+#t4_13{left:162px;top:109px;}
+#t5_13{left:206px;top:147px;}
+#t6_13{left:206px;top:195px;}
+#t7_13{left:214px;top:232px;}
+#t8_13{left:438px;top:232px;}
+#t9_13{left:498px;top:232px;}
+#ta_13{left:539px;top:232px;}
+#tb_13{left:214px;top:259px;}
+#tc_13{left:439px;top:259px;}
+#td_13{left:501px;top:259px;}
+#te_13{left:539px;top:259px;}
+#tf_13{left:214px;top:286px;}
+#tg_13{left:444px;top:286px;}
+#th_13{left:495px;top:286px;}
+#ti_13{left:539px;top:286px;}
+#tj_13{left:214px;top:320px;}
+#tk_13{left:444px;top:320px;}
+#tl_13{left:495px;top:320px;}
+#tm_13{left:539px;top:310px;}
+#tn_13{left:539px;top:330px;}
+#to_13{left:214px;top:362px;}
+#tp_13{left:444px;top:362px;}
+#tq_13{left:495px;top:362px;}
+#tr_13{left:539px;top:352px;}
+#ts_13{left:577px;top:352px;}
+#tt_13{left:539px;top:373px;}
+#tu_13{left:206px;top:433px;}
+#tv_13{left:214px;top:470px;}
+#tw_13{left:440px;top:470px;}
+#tx_13{left:500px;top:470px;}
+#ty_13{left:541px;top:470px;}
+#tz_13{left:214px;top:497px;}
+#t10_13{left:446px;top:497px;}
+#t11_13{left:503px;top:497px;}
+#t12_13{left:541px;top:496px;}
+#t13_13{left:214px;top:524px;}
+#t14_13{left:446px;top:524px;}
+#t15_13{left:503px;top:524px;}
+#t16_13{left:541px;top:522px;}
+#t17_13{left:214px;top:551px;}
+#t18_13{left:449px;top:551px;}
+#t19_13{left:503px;top:551px;}
+#t1a_13{left:541px;top:551px;}
+#t1b_13{left:214px;top:577px;}
+#t1c_13{left:445px;top:577px;}
+#t1d_13{left:503px;top:577px;}
+#t1e_13{left:541px;top:577px;}
+#t1f_13{left:214px;top:604px;}
+#t1g_13{left:449px;top:604px;}
+#t1h_13{left:503px;top:604px;}
+#t1i_13{left:541px;top:604px;}
+#t1j_13{left:214px;top:631px;}
+#t1k_13{left:445px;top:631px;}
+#t1l_13{left:503px;top:631px;}
+#t1m_13{left:541px;top:631px;}
+#t1n_13{left:214px;top:658px;}
+#t1o_13{left:449px;top:658px;}
+#t1p_13{left:503px;top:658px;}
+#t1q_13{left:541px;top:658px;}
+#t1r_13{left:214px;top:684px;}
+#t1s_13{left:445px;top:684px;}
+#t1t_13{left:503px;top:684px;}
+#t1u_13{left:541px;top:684px;}
+#t1v_13{left:206px;top:739px;}
+#t1w_13{left:221px;top:774px;}
+#t1x_13{left:252px;top:790px;}
+#t1y_13{left:276px;top:806px;}
+#t1z_13{left:276px;top:822px;}
+#t20_13{left:276px;top:838px;}
+#t21_13{left:276px;top:855px;}
+#t22_13{left:276px;top:871px;}
+#t23_13{left:276px;top:887px;}
+#t24_13{left:252px;top:903px;}
+#t25_13{left:221px;top:919px;}
+#t26_13{left:221px;top:935px;}
+#t27_13{left:221px;top:951px;}
+
+.s1_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold13;
+	color: rgb(0,0,0);
+}
+
+.s3_13{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold13;
+	color: rgb(0,0,0);
+}
+
+.s5_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic13;
+	color: rgb(0,0,0);
+}
+
+.s7_13{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans13;
+	color: rgb(0,0,0);
+}
+
+.s2_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri13;
+	color: rgb(0,0,0);
+}
+
+.s8_13{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Consolas13;
+	color: rgb(0,0,0);
+}
+
+.s6_13{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold13;
+	color: rgb(0,0,0);
+}
+
+.s4_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans13;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts13" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri13;
+	src :url("13/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Consolas13;
+	src :url("13/fonts/ABCDEE-Consolas.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold13;
+	src :url("13/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold13;
+	src :url("13/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic13;
+	src :url("13/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans13;
+	src :url("13/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_13" class="t s1_13">13 </div>
+<div id="t2_13" class="t s2_13">/ </div>
+<div id="t3_13" class="t s1_13">16</div>
+<div id="t4_13" class="t s3_13">5.6.  <a href="../turkpos.api/MutabakatOzetProd.aspx">TP_Mutabakat_Ozet</a></div>
+<div id="t5_13" class="t s4_13">Belirli tarihleri arasındaki üye işyerinin işlemleri özet biçiminde alabilirsiniz. </div>
+<div id="t6_13" class="t s5_13">Gönderilecek Parametreler: </div>
+<div id="t7_13" class="t s6_13">Parametre</div>
+<div id="t8_13" class="t s6_13">Tip</div>
+<div id="t9_13" class="t s6_13">U</div>
+<div id="ta_13" class="t s6_13">Açıklama</div>
+<div id="tb_13" class="t s7_13">G </div>
+<div id="tc_13" class="t s7_13">NS </div>
+<div id="td_13" class="t s7_13">- </div>
+<div id="te_13" class="t s7_13">ST_WS_Guvenlik Nesnesi </div>
+<div id="tf_13" class="t s7_13">GUID </div>
+<div id="tg_13" class="t s7_13">N </div>
+<div id="th_13" class="t s7_13">36 </div>
+<div id="ti_13" class="t s7_13">Üye İşyerine ait Anahtar </div>
+<div id="tj_13" class="t s7_13">Tarih_Bas </div>
+<div id="tk_13" class="t s7_13">N </div>
+<div id="tl_13" class="t s7_13">20 </div>
+<div id="tm_13" class="t s7_13">Başlangıç Tarihi (dd.MM.yyyy </div>
+<div id="tn_13" class="t s7_13">HH:mm:ss – 20.11.2015 00:00:00) </div>
+<div id="to_13" class="t s7_13">Tarih_Bit </div>
+<div id="tp_13" class="t s7_13">N </div>
+<div id="tq_13" class="t s7_13">20 </div>
+<div id="tr_13" class="t s7_13">Bitiş </div>
+<div id="ts_13" class="t s7_13">Tarihi (dd.MM.yyyy HH:mm:ss – </div>
+<div id="tt_13" class="t s7_13">20.11.2015 15:15:00) </div>
+<div id="tu_13" class="t s5_13">Sonuç Parametreleri: </div>
+<div id="tv_13" class="t s6_13">Parametre</div>
+<div id="tw_13" class="t s6_13">Tip</div>
+<div id="tx_13" class="t s6_13">U</div>
+<div id="ty_13" class="t s6_13">Açıklama</div>
+<div id="tz_13" class="t s7_13">Sonuc </div>
+<div id="t10_13" class="t s7_13">N </div>
+<div id="t11_13" class="t s7_13">- </div>
+<div id="t12_13" class="t s2_13">İşlem sonucu </div>
+<div id="t13_13" class="t s7_13">Sonuc_Str </div>
+<div id="t14_13" class="t s7_13">N </div>
+<div id="t15_13" class="t s7_13">- </div>
+<div id="t16_13" class="t s2_13">İşlem sonuç açıklama</div>
+<div id="t17_13" class="t s7_13">Basarili_Islem_Sayi </div>
+<div id="t18_13" class="t s7_13">I </div>
+<div id="t19_13" class="t s7_13">- </div>
+<div id="t1a_13" class="t s7_13">Başarılı işlem sayısı </div>
+<div id="t1b_13" class="t s7_13">Basarili_Islem_Toplam_Tutar </div>
+<div id="t1c_13" class="t s7_13">M </div>
+<div id="t1d_13" class="t s7_13">- </div>
+<div id="t1e_13" class="t s7_13">Başarılı işlem toplam tutarı </div>
+<div id="t1f_13" class="t s7_13">Iptal_Islem_Sayi </div>
+<div id="t1g_13" class="t s7_13">I </div>
+<div id="t1h_13" class="t s7_13">- </div>
+<div id="t1i_13" class="t s7_13">İptal işlem sayısı </div>
+<div id="t1j_13" class="t s7_13">Iptal_Islem_Toplam_Tutar </div>
+<div id="t1k_13" class="t s7_13">M </div>
+<div id="t1l_13" class="t s7_13">- </div>
+<div id="t1m_13" class="t s7_13">İptal işlem toplam tutarı </div>
+<div id="t1n_13" class="t s7_13">Iade_Islem_Sayi </div>
+<div id="t1o_13" class="t s7_13">I </div>
+<div id="t1p_13" class="t s7_13">- </div>
+<div id="t1q_13" class="t s7_13">İade işlem sayısı </div>
+<div id="t1r_13" class="t s7_13">Iade_Islem_Toplam_Tutar </div>
+<div id="t1s_13" class="t s7_13">M </div>
+<div id="t1t_13" class="t s7_13">- </div>
+<div id="t1u_13" class="t s7_13">İade işlem toplam tutarı </div>
+<div id="t1v_13" class="t s5_13">Örnek Sonuç Parametreleri: </div>
+<div id="t1w_13" class="t s8_13">&lt;DT_Bilgi&gt; </div>
+<div id="t1x_13" class="t s8_13">&lt;DT_Mutabakat_Ozet diffgr:id="DT_Mutabakat_Ozet1" msdata:rowOrder="0"&gt; </div>
+<div id="t1y_13" class="t s8_13">&lt;Basarili_Islem_Sayi&gt;0&lt;/Basarili_Islem_Sayi&gt;  </div>
+<div id="t1z_13" class="t s8_13">&lt;Basarili_Islem_Toplam_Tutar&gt;0.0000&lt;/Basarili_Islem_Toplam_Tutar&gt; </div>
+<div id="t20_13" class="t s8_13">&lt;Iptal_Islem_Sayi&gt;0&lt;/Iptal_Islem_Sayi&gt; </div>
+<div id="t21_13" class="t s8_13">&lt;Iptal_Islem_Toplam_Tutar&gt;0.0000&lt;/Iptal_Islem_Toplam_Tutar&gt; </div>
+<div id="t22_13" class="t s8_13">&lt;Iade_Islem_Sayi&gt;0&lt;/Iade_Islem_Sayi&gt; </div>
+<div id="t23_13" class="t s8_13">&lt;Iade_Islem_Toplam_Tutar&gt;0.0000&lt;/Iade_Islem_Toplam_Tutar&gt; </div>
+<div id="t24_13" class="t s8_13">&lt;/DT_Mutabakat_Ozet&gt; </div>
+<div id="t25_13" class="t s8_13">&lt;/DT_Bilgi&gt; </div>
+<div id="t26_13" class="t s8_13">&lt;Sonuc&gt;1&lt;/Sonuc&gt; </div>
+<div id="t27_13" class="t s8_13">&lt;Sonuc_Str&gt;Başarılı&lt;/Sonuc_Str&gt; </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg13Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg13"><img src="13/13.jpg" id="pdf13" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld13" type="text/javascript">
+
+var isIE = false;
+var f13 = [['t4_13',868],['t5_13',2337],['t6_13',816],['te_13',701],['ti_13',679],['tm_13',819],['tn_13',945],['ts_13',893],['tt_13',588],['tu_13',627],['t12_13',357],['t16_13',576],['t1a_13',544],['t1e_13',764],['t1i_13',462],['t1m_13',681],['t1q_13',459],['t1u_13',678],['t1v_13',827],['t1x_13',2117],['t1y_13',1361]];
+function load13(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f13);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 80;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_13");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

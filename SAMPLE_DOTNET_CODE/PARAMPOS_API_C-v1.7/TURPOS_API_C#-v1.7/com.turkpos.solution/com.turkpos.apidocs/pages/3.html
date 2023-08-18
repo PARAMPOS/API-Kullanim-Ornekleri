@@ -1,0 +1,354 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load3();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_3{left:830px;top:1211px;}
+#t2_3{left:842px;top:1211px;}
+#t3_3{left:852px;top:1211px;}
+#t4_3{left:128px;top:110px;}
+#t5_3{left:162px;top:153px;}
+#t6_3{left:271px;top:153px;}
+#t7_3{left:162px;top:195px;}
+#t8_3{left:271px;top:195px;}
+#t9_3{left:162px;top:236px;}
+#ta_3{left:271px;top:236px;}
+#tb_3{left:162px;top:278px;}
+#tc_3{left:162px;top:319px;}
+#td_3{left:190px;top:319px;}
+#te_3{left:275px;top:319px;}
+#tf_3{left:293px;top:319px;}
+#tg_3{left:379px;top:319px;}
+#th_3{left:393px;top:319px;}
+#ti_3{left:487px;top:319px;}
+#tj_3{left:497px;top:319px;}
+#tk_3{left:595px;top:319px;}
+#tl_3{left:616px;top:319px;}
+#tm_3{left:135px;top:402px;}
+#tn_3{left:173px;top:453px;}
+#to_3{left:173px;top:487px;}
+#tp_3{left:401px;top:487px;}
+#tq_3{left:549px;top:487px;}
+#tr_3{left:624px;top:487px;}
+#ts_3{left:656px;top:487px;}
+#tt_3{left:173px;top:522px;}
+#tu_3{left:290px;top:522px;}
+#tv_3{left:428px;top:522px;}
+#tw_3{left:513px;top:522px;}
+#tx_3{left:173px;top:556px;}
+#ty_3{left:173px;top:590px;}
+#tz_3{left:173px;top:655px;}
+#t10_3{left:312px;top:655px;}
+#t11_3{left:372px;top:655px;}
+#t12_3{left:173px;top:696px;}
+#t13_3{left:173px;top:731px;}
+#t14_3{left:271px;top:731px;}
+#t15_3{left:293px;top:731px;}
+#t16_3{left:334px;top:731px;}
+#t17_3{left:428px;top:731px;}
+#t18_3{left:495px;top:731px;}
+#t19_3{left:570px;top:731px;}
+#t1a_3{left:617px;top:731px;}
+#t1b_3{left:672px;top:731px;}
+#t1c_3{left:723px;top:731px;}
+#t1d_3{left:173px;top:765px;}
+#t1e_3{left:182px;top:825px;}
+#t1f_3{left:344px;top:825px;}
+#t1g_3{left:412px;top:825px;}
+#t1h_3{left:496px;top:825px;}
+#t1i_3{left:182px;top:852px;}
+#t1j_3{left:344px;top:852px;}
+#t1k_3{left:440px;top:852px;}
+#t1l_3{left:496px;top:852px;}
+#t1m_3{left:182px;top:879px;}
+#t1n_3{left:344px;top:879px;}
+#t1o_3{left:441px;top:879px;}
+#t1p_3{left:496px;top:879px;}
+#t1q_3{left:182px;top:905px;}
+#t1r_3{left:344px;top:905px;}
+#t1s_3{left:441px;top:905px;}
+#t1t_3{left:496px;top:905px;}
+
+.s1_3{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold3;
+	color: rgb(0,0,0);
+}
+
+.s3_3{
+	FONT-SIZE: 85px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold3;
+	color: rgb(0,0,0);
+}
+
+.s6_3{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold3;
+	color: rgb(0,0,0);
+}
+
+.s5_3{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic3;
+	color: rgb(0,0,0);
+}
+
+.s8_3{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans3;
+	color: rgb(0,0,0);
+}
+
+.s2_3{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri3;
+	color: rgb(0,0,0);
+}
+
+.s7_3{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold3;
+	color: rgb(0,0,0);
+}
+
+.s4_3{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans3;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts3" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri3;
+	src :url("3/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold3;
+	src :url("3/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold3;
+	src :url("3/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic3;
+	src :url("3/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans3;
+	src :url("3/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_3" class="t s1_3">3 </div>
+<div id="t2_3" class="t s2_3">/ </div>
+<div id="t3_3" class="t s1_3">16</div>
+<div id="t4_3" class="t s3_3">4. TANIMLAR </div>
+<div id="t5_3" class="t s4_3">Firma   </div>
+<div id="t6_3" class="t s4_3">: TURK Elektronik Para A.Ş. </div>
+<div id="t7_3" class="t s4_3">Üye İşyeri  </div>
+<div id="t8_3" class="t s4_3">: TurkPos alt yapısını kullanacak firma </div>
+<div id="t9_3" class="t s4_3">Müşteri  </div>
+<div id="ta_3" class="t s4_3">: Üye işyerinin web site üyeleri </div>
+<div id="tb_3" class="t s5_3">Parametre Kısaltmaları: </div>
+<div id="tc_3" class="t s6_3">NS</div>
+<div id="td_3" class="t s4_3">: Nesne </div>
+<div id="te_3" class="t s6_3">N</div>
+<div id="tf_3" class="t s4_3">: string </div>
+<div id="tg_3" class="t s6_3">L</div>
+<div id="th_3" class="t s4_3">: Long </div>
+<div id="ti_3" class="t s6_3">I </div>
+<div id="tj_3" class="t s4_3">: Integer </div>
+<div id="tk_3" class="t s6_3">M</div>
+<div id="tl_3" class="t s4_3">: Money  </div>
+<div id="tm_3" class="t s3_3">5. METOTLAR </div>
+<div id="tn_3" class="t s4_3">Aksi belirtilmedikçe metotlara gönderilecek tüm parametreler zorunlu alandır. </div>
+<div id="to_3" class="t s4_3">Web Servis metotlarında </div>
+<div id="tp_3" class="t s6_3">ST_WS_Guvenlik</div>
+<div id="tq_3" class="t s4_3">nesnesi </div>
+<div id="tr_3" class="t s4_3">ile </div>
+<div id="ts_3" class="t s4_3">güvenlik kontrolü </div>
+<div id="tt_3" class="t s4_3">yapılmaktadır. </div>
+<div id="tu_3" class="t s6_3">ST_WS_Guvenlik </div>
+<div id="tv_3" class="t s4_3">nesnesinin</div>
+<div id="tw_3" class="t s6_3">, aşağıdaki bilgiler ile geçilebilmesi </div>
+<div id="tx_3" class="t s6_3">için ayrıca sunucu IP Adresi (birden fazla IP Adresi mevcut ise IP Adres </div>
+<div id="ty_3" class="t s6_3">Blokları) tarafımıza göndermeniz gerekmektedir.</div>
+<div id="tz_3" class="t s6_3">ST_WS_Guvenlik </div>
+<div id="t10_3" class="t s4_3">nesnesi</div>
+<div id="t11_3" class="t s5_3">: </div>
+<div id="t12_3" class="t s6_3">Aşağıdaki bilgiler, entegrasyon işlemi başarıyla tamamlandıktan sonra </div>
+<div id="t13_3" class="t s6_3">iletilecektir</div>
+<div id="t14_3" class="t s5_3">.</div>
+<div id="t15_3" class="t s6_3">Bu </div>
+<div id="t16_3" class="t s6_3">aşamaya </div>
+<div id="t17_3" class="t s6_3">kadar </div>
+<div id="t18_3" class="t s6_3">Madde </div>
+<div id="t19_3" class="t s6_3">3.2. </div>
+<div id="t1a_3" class="t s6_3">deki </div>
+<div id="t1b_3" class="t s6_3">test </div>
+<div id="t1c_3" class="t s6_3">bilgilerini </div>
+<div id="t1d_3" class="t s6_3">kullanabilirsiniz. </div>
+<div id="t1e_3" class="t s7_3">Parametre</div>
+<div id="t1f_3" class="t s7_3">Tip</div>
+<div id="t1g_3" class="t s7_3">Uzunluk</div>
+<div id="t1h_3" class="t s7_3">Açıklama</div>
+<div id="t1i_3" class="t s8_3">CLIENT_CODE </div>
+<div id="t1j_3" class="t s8_3">int </div>
+<div id="t1k_3" class="t s8_3">5 </div>
+<div id="t1l_3" class="t s8_3">Terminal ID, tarafımızdan iletilecektir. </div>
+<div id="t1m_3" class="t s8_3">CLIENT_USERNAME </div>
+<div id="t1n_3" class="t s8_3">string </div>
+<div id="t1o_3" class="t s8_3">- </div>
+<div id="t1p_3" class="t s8_3">Kullanıcı Adı, tarafımızdan iletilecektir. </div>
+<div id="t1q_3" class="t s8_3">CLIENT_PASSWORD </div>
+<div id="t1r_3" class="t s8_3">string </div>
+<div id="t1s_3" class="t s8_3">- </div>
+<div id="t1t_3" class="t s8_3">Şifre, tarafımızdan iletilecektir. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg3Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg3"><img src="3/3.jpg" id="pdf3" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld3" type="text/javascript">
+
+var isIE = false;
+var f3 = [['t4_3',560],['t5_3',216],['t6_3',827],['t7_3',325],['t8_3',1184],['t9_3',260],['ta_3',953],['tb_3',711],['td_3',236],['tf_3',215],['th_3',190],['tj_3',261],['tl_3',269],['tm_3',571],['tn_3',2522],['to_3',853],['ts_3',589],['tw_3',1162],['tx_3',2521],['ty_3',1655],['t12_3',2519],['t1l_3',1062],['t1p_3',1077],['t1t_3',861]];
+function load3(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f3);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 66;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_3");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

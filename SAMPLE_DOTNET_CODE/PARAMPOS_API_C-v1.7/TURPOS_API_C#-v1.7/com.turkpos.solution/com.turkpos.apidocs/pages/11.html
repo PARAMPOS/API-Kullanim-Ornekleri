@@ -1,0 +1,372 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 910px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load11();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_11{left:821px;top:1211px;}
+#t2_11{left:842px;top:1211px;}
+#t3_11{left:852px;top:1211px;}
+#t4_11{left:206px;top:109px;}
+#t5_11{left:214px;top:147px;}
+#t6_11{left:495px;top:147px;}
+#t7_11{left:214px;top:174px;}
+#t8_11{left:495px;top:174px;}
+#t9_11{left:214px;top:200px;}
+#ta_11{left:495px;top:200px;}
+#tb_11{left:214px;top:227px;}
+#tc_11{left:495px;top:227px;}
+#td_11{left:214px;top:254px;}
+#te_11{left:495px;top:254px;}
+#tf_11{left:214px;top:281px;}
+#tg_11{left:495px;top:281px;}
+#th_11{left:214px;top:307px;}
+#ti_11{left:495px;top:307px;}
+#tj_11{left:214px;top:342px;}
+#tk_11{left:495px;top:331px;}
+#tl_11{left:495px;top:352px;}
+#tm_11{left:214px;top:384px;}
+#tn_11{left:495px;top:374px;}
+#to_11{left:495px;top:395px;}
+#tp_11{left:214px;top:419px;}
+#tq_11{left:495px;top:419px;}
+#tr_11{left:214px;top:484px;}
+#ts_11{left:495px;top:443px;}
+#tt_11{left:495px;top:464px;}
+#tu_11{left:495px;top:484px;}
+#tv_11{left:495px;top:505px;}
+#tw_11{left:495px;top:526px;}
+#tx_11{left:206px;top:569px;}
+#ty_11{left:206px;top:603px;}
+#tz_11{left:206px;top:637px;}
+#t10_11{left:162px;top:730px;}
+#t11_11{left:206px;top:767px;}
+#t12_11{left:281px;top:767px;}
+#t13_11{left:361px;top:767px;}
+#t14_11{left:453px;top:767px;}
+#t15_11{left:507px;top:767px;}
+#t16_11{left:561px;top:767px;}
+#t17_11{left:614px;top:767px;}
+#t18_11{left:727px;top:767px;}
+#t19_11{left:206px;top:802px;}
+#t1a_11{left:206px;top:836px;}
+#t1b_11{left:354px;top:836px;}
+#t1c_11{left:429px;top:836px;}
+#t1d_11{left:534px;top:836px;}
+#t1e_11{left:588px;top:836px;}
+#t1f_11{left:637px;top:836px;}
+#t1g_11{left:672px;top:836px;}
+#t1h_11{left:720px;top:836px;}
+#t1i_11{left:206px;top:870px;}
+#t1j_11{left:206px;top:905px;}
+#t1k_11{left:206px;top:939px;}
+#t1l_11{left:206px;top:996px;}
+#t1m_11{left:214px;top:1034px;}
+#t1n_11{left:438px;top:1034px;}
+#t1o_11{left:498px;top:1034px;}
+#t1p_11{left:539px;top:1034px;}
+#t1q_11{left:214px;top:1060px;}
+#t1r_11{left:439px;top:1060px;}
+#t1s_11{left:501px;top:1060px;}
+#t1t_11{left:539px;top:1060px;}
+#t1u_11{left:214px;top:1087px;}
+#t1v_11{left:444px;top:1087px;}
+#t1w_11{left:495px;top:1087px;}
+#t1x_11{left:539px;top:1087px;}
+#t1y_11{left:214px;top:1122px;}
+#t1z_11{left:445px;top:1122px;}
+#t20_11{left:501px;top:1122px;}
+#t21_11{left:539px;top:1111px;}
+#t22_11{left:539px;top:1132px;}
+
+.s1_11{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold11;
+	color: rgb(0,0,0);
+}
+
+.s5_11{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans11;
+	color: rgb(0,0,0);
+}
+
+.s3_11{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans-Italic11;
+	color: rgb(0,0,0);
+}
+
+.s8_11{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans11;
+	color: rgb(0,0,0);
+}
+
+.s7_11{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold11;
+	color: rgb(0,0,0);
+}
+
+.s2_11{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri11;
+	color: rgb(0,0,0);
+}
+
+.s6_11{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-OpenSans11;
+	color: rgb(0,112,192);
+}
+
+.s4_11{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-OpenSans-Bold11;
+	color: rgb(0,0,0);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts11" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri11;
+	src :url("11/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold11;
+	src :url("11/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Bold11;
+	src :url("11/fonts/ABCDEE-OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans-Italic11;
+	src :url("11/fonts/ABCDEE-OpenSans-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-OpenSans11;
+	src :url("11/fonts/ABCDEE-OpenSans.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_11" class="t s1_11">11 </div>
+<div id="t2_11" class="t s2_11">/ </div>
+<div id="t3_11" class="t s1_11">16</div>
+<div id="t4_11" class="t s3_11">POST Parametreleri: </div>
+<div id="t5_11" class="t s4_11">Parametre </div>
+<div id="t6_11" class="t s4_11">Açıklama </div>
+<div id="t7_11" class="t s5_11">TURKPOS_RETVAL_Sonuc </div>
+<div id="t8_11" class="t s5_11">Sonuç değeri </div>
+<div id="t9_11" class="t s5_11">TURKPOS_RETVAL_Sonuc_Str </div>
+<div id="ta_11" class="t s5_11">Sonuç açıklaması </div>
+<div id="tb_11" class="t s5_11">TURKPOS_RETVAL_GUID </div>
+<div id="tc_11" class="t s5_11">Üye İşyeri ait anahtarı </div>
+<div id="td_11" class="t s5_11">TURKPOS_RETVAL_Islem_Tarih </div>
+<div id="te_11" class="t s5_11">İşlem Tarihi </div>
+<div id="tf_11" class="t s5_11">TURKPOS_RETVAL_Dekont_ID </div>
+<div id="tg_11" class="t s5_11">Dekont Numarası </div>
+<div id="th_11" class="t s5_11">TURKPOS_RETVAL_Tahsilat_Tutari </div>
+<div id="ti_11" class="t s5_11">Müşteriden tahsil edilen tutar </div>
+<div id="tj_11" class="t s5_11">TURKPOS_RETVAL_Odeme_Tutari </div>
+<div id="tk_11" class="t s5_11">Net tutar. Tahsilat tutarından komisyon </div>
+<div id="tl_11" class="t s5_11">tutarının çıkarılmış halidir. </div>
+<div id="tm_11" class="t s5_11">TURKPOS_RETVAL_Siparis_ID </div>
+<div id="tn_11" class="t s5_11">Servise gönderdiğiniz işleme ait tekil </div>
+<div id="to_11" class="t s5_11">Siparis_ID </div>
+<div id="tp_11" class="t s5_11">TURKPOS_RETVAL_Islem_ID </div>
+<div id="tq_11" class="t s5_11">Servise gönderdiğiniz Islem_ID </div>
+<div id="tr_11" class="t s5_11">TURKPOS_RETVAL_Ext_Data </div>
+<div id="ts_11" class="t s5_11">Metottaki Data1, Data2, Data3, Data4, </div>
+<div id="tt_11" class="t s5_11">Data5 parametrelerinin “|” ile birleştirilmiş </div>
+<div id="tu_11" class="t s5_11">hali döner.  </div>
+<div id="tv_11" class="t s5_11">Ext_Data = Data1 &amp; "|" &amp; Data2 &amp; "|" &amp; </div>
+<div id="tw_11" class="t s5_11">Data3 &amp; "|" &amp; Data4 &amp; "|" &amp; Data5 </div>
+<div id="tx_11" class="t s6_11">TURKPOS_RETVAL_Sonuc &lt; 0 ise TURKPOS_RETVAL_Dekont_ID “0” döner.  </div>
+<div id="ty_11" class="t s6_11">TURKPOS_RETVAL_Dekont_ID değeri “0” dan büyük olduğu durumlarda kredi </div>
+<div id="tz_11" class="t s6_11">kartından çekim işlemi tamamlanmış anlamına gelir. </div>
+<div id="t10_11" class="t s7_11">5.5. <a href="../turkpos.api/IslemSorgulama.aspx">TP_Islem_Sorgulama</a> </div>
+<div id="t11_11" class="t s8_11">İşlemin </div>
+<div id="t12_11" class="t s8_11">başarılı, </div>
+<div id="t13_11" class="t s8_11">başarısız, </div>
+<div id="t14_11" class="t s8_11">iptal </div>
+<div id="t15_11" class="t s8_11">veya </div>
+<div id="t16_11" class="t s8_11">iade </div>
+<div id="t17_11" class="t s8_11">durumunda </div>
+<div id="t18_11" class="t s8_11">olduğunu </div>
+<div id="t19_11" class="t s8_11">öğrenebilirsiniz.  </div>
+<div id="t1a_11" class="t s8_11">TP_Islem_Odeme </div>
+<div id="t1b_11" class="t s8_11">metodu </div>
+<div id="t1c_11" class="t s8_11">sonrasında, </div>
+<div id="t1d_11" class="t s8_11">kredi </div>
+<div id="t1e_11" class="t s8_11">kartı </div>
+<div id="t1f_11" class="t s8_11">3D </div>
+<div id="t1g_11" class="t s8_11">şifre </div>
+<div id="t1h_11" class="t s8_11">bilgilerinin </div>
+<div id="t1i_11" class="t s8_11">girilmesinin ardından işlemin başarılı veya başarısız olma durumuna göre, </div>
+<div id="t1j_11" class="t s8_11">Basarili_URL veya Hata_URL’ye POST sırasında bir hata oluştuğunda da bu </div>
+<div id="t1k_11" class="t s8_11">metot ile işlemin durumunu sorgulayabilirsiniz. </div>
+<div id="t1l_11" class="t s3_11">Gönderilecek Parametreler: </div>
+<div id="t1m_11" class="t s4_11">Parametre</div>
+<div id="t1n_11" class="t s4_11">Tip</div>
+<div id="t1o_11" class="t s4_11">U</div>
+<div id="t1p_11" class="t s4_11">Açıklama</div>
+<div id="t1q_11" class="t s5_11">G </div>
+<div id="t1r_11" class="t s5_11">NS </div>
+<div id="t1s_11" class="t s5_11">- </div>
+<div id="t1t_11" class="t s5_11">ST_WS_Guvenlik Nesnesi </div>
+<div id="t1u_11" class="t s5_11">GUID </div>
+<div id="t1v_11" class="t s5_11">N </div>
+<div id="t1w_11" class="t s5_11">36 </div>
+<div id="t1x_11" class="t s5_11">Üye İşyerine ait Anahtar </div>
+<div id="t1y_11" class="t s5_11">Dekont_ID </div>
+<div id="t1z_11" class="t s5_11">L </div>
+<div id="t20_11" class="t s5_11">- </div>
+<div id="t21_11" class="t s5_11">Başarılı işlem sonrası POST edilen </div>
+<div id="t22_11" class="t s5_11">Dekont_ID, opsiyoneldir. </div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg11Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg11"><img src="11/11.jpg" id="pdf11" style="width:910px; height:1286px; background-color:white;"/></div>
+
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld11" type="text/javascript">
+
+var isIE = false;
+var f11 = [['t4_11',601],['t8_11',370],['ta_11',485],['tc_11',619],['te_11',329],['tg_11',500],['ti_11',842],['tk_11',1119],['tl_11',741],['tn_11',1029],['tq_11',863],['ts_11',1072],['tt_11',1208],['tu_11',321],['tv_11',1108],['tw_11',978],['tx_11',2280],['ty_11',2385],['tz_11',1633],['t10_11',883],['t19_11',515],['t1i_11',2385],['t1j_11',2385],['t1k_11',1471],['t1l_11',816],['t1t_11',701],['t1x_11',679],['t21_11',955],['t22_11',694]];
+function load11(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f11);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 75;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_11");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>
